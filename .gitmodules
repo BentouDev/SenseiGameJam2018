@@ -1,0 +1,3 @@
+[submodule "Assets/Framework"]
+	path = Assets/Framework
+	url = https://github.com/BentouDev/Unity3DFramework.git
