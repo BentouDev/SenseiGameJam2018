@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainTag: MainCamera
   Autostart: 2
-  PreferLevelCamera: 0
+  PreferLevelCamera: 1
 --- !u!1 &5098297228009103181
 GameObject:
   m_ObjectHideFlags: 0
