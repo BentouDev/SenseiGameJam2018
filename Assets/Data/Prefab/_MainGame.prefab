@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5098297227807602902}
   - component: {fileID: 5098297227807602889}
   - component: {fileID: 5098297227807602903}
+  - component: {fileID: 5098297229235327368}
   m_Layer: 0
   m_Name: _MainGame
   m_TagString: Untagged
@@ -206,6 +207,21 @@ MonoBehaviour:
   SceneToLoad:
     sceneAsset: {fileID: 102900000, guid: 4d697f176317dc6428ac3684a778b7e5, type: 3}
     sceneName: Assets/Data/Scenes/MainMenu.unity
+--- !u!114 &5098297229235327368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098297227807602890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38fa04806c24a2bbbe0ebb4f01f3542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainTag: MainCamera
+  Autostart: 2
+  PreferLevelCamera: 0
 --- !u!1 &5098297228009103181
 GameObject:
   m_ObjectHideFlags: 0
