@@ -26,11 +26,17 @@ public class GamePlay : GameState
     public float SpawnHeight = 1.5f;
 
     private List<StatePawn> CurrentWaveEnemies = new List<StatePawn>();
+    private bool InLimbo;
     
     protected override void OnStart()
     {
         MainGame.Instance.Controllers.Init();
         MainGame.Instance.Controllers.Enable();
+
+        foreach (var ai in FindObjectsOfType<AIDriver>())
+        {
+            ai.EnableInput();
+        }
         
         StartWave();
     }
@@ -42,6 +48,9 @@ public class GamePlay : GameState
 
     protected override void OnTick()
     {
+        if (InLimbo)
+            return;
+        
         if (CurrentWaveEnemies.All(e => !e.IsAlive()))
         {
             StartCoroutine(EndWave());
@@ -50,19 +59,26 @@ public class GamePlay : GameState
 
     protected IEnumerator EndWave()
     {
-        foreach (var enemy in CurrentWaveEnemies)
+        InLimbo = true;
         {
-            Destroy(enemy);
+            foreach (var enemy in CurrentWaveEnemies)
+            {
+                MainGame.Instance.Controllers.Unregister(enemy.GetComponent<Controller>());
+                Destroy(enemy.gameObject);
+            }
+        
+            CurrentWaveEnemies.Clear();
+        
+            if (Scheduler)
+                Scheduler.RaiseEvent(WaveEndEvent);
+        
+            yield return new WaitForSeconds(WaveDelay);
+
+            CurrentWave++;
+
+            StartWave();   
         }
-        
-        if (Scheduler)
-            Scheduler.RaiseEvent(WaveEndEvent);
-        
-        yield return new WaitForSeconds(WaveDelay);
-
-        CurrentWave++;
-
-        StartWave();
+        InLimbo = false;
     }
 
     protected void StartWave()

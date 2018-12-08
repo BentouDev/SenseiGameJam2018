@@ -158,7 +158,7 @@ MonoBehaviour:
     type: 3}
   StartingEnemyCount: 5
   EnemyCountCoefficient: 0.25
-  WorldRadius: 20
+  WorldRadius: 30
   SpawnHeight: 1.5
 --- !u!114 &1364492531
 MonoBehaviour:

@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Data.Scripts.AI.Modules;
+using Framework;
 using UnityEngine;
 
 public class ModuleFollow : AIModule
@@ -8,6 +10,8 @@ public class ModuleFollow : AIModule
     public Transform Destination;
     public string TargetTag = "";
     public float DestinationThreshold = 2.0f;
+
+    public DestinationTarget.TargetClass TargetClassToFind;
 
     public AIModule OnDestinationReached;
 
@@ -24,18 +28,39 @@ public class ModuleFollow : AIModule
         Gizmos.DrawWireSphere(transform.position, TriggerRange);
     }
 
-    protected override float CalcPriority()
+    void ObtainDestination()
     {
         // Find one yourself
         if (Destination == null && !string.IsNullOrEmpty(TargetTag))
         {
             var go = GameObject.FindGameObjectWithTag(TargetTag);
-            Destination = go?.transform;
+            Destination = go != null ? go.transform : null;
+        }
+
+        if (Destination == null)
+        {
+            foreach (var target in FindObjectsOfType<DestinationTarget>())
+            {
+                var pawn = target.GetComponent<BasePawn>();
+                if (pawn && !pawn.IsAlive())
+                    continue;
+                
+                if (target.Class == TargetClassToFind)
+                {
+                    Destination = target.transform;
+                    break;
+                }
+            }
         }
 
         // Get current enemy
         if (!Destination)
-            Destination = Driver.CurrentEnemy?.transform;
+            Destination = Driver.CurrentEnemy ? Driver.CurrentEnemy.transform : null;
+    }
+
+    protected override float CalcPriority()
+    {
+        ObtainDestination();
 
         if (!Destination)
             return 0;
@@ -57,10 +82,13 @@ public class ModuleFollow : AIModule
 
     protected override void OnBegin()
     {
-        if (Destination == null)
+        ObtainDestination();
+
+        if (Destination)
         {
-            var go = GameObject.FindGameObjectWithTag(TargetTag);
-            Destination = go != null ? go.transform : null;
+            var pawn = Destination.GetComponent<Damageable>();
+            if (pawn)
+                Driver.ObtainEnemy(pawn);
         }
     }
 
