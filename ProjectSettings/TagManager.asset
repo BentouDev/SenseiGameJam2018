@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerSpawn
   - PotMain
+  - MainState
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - PostProcessing
   - 
-  - 
-  - 
+  - Enemies
+  - Pot
   - 
   - 
   - 
