@@ -514,7 +514,7 @@ MonoBehaviour:
   Damageable: {fileID: 8519010371927721944}
   Anim: {fileID: 0}
   Grounder: {fileID: 0}
-  DrawHit: 1
+  DrawHit: 0
   RaycastMask:
     serializedVersion: 2
     m_Bits: 1
@@ -703,6 +703,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeadTrigger: {fileID: 5681742162024580546}
+  Driver: {fileID: 0}
+  Mask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &7257201012015169645
 GameObject:
   m_ObjectHideFlags: 0

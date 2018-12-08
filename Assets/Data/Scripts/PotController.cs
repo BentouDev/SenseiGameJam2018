@@ -7,6 +7,10 @@ public class PotController : BaseBehaviour
 {
     public Damageable Dmg;
     public float DelayFromDmg = 1;
+    
+    [Header("Pot data")]
+    public float PotThrowDuration = 4;
+    public int PotHealAmount;
 
     public bool IsAlive => Dmg && Dmg.IsAlive;
 
@@ -28,5 +32,36 @@ public class PotController : BaseBehaviour
             Lasthurt = Time.time;
             Dmg.Hurt(1);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var dead = other.GetComponentInChildren<DeadBody>();
+        if (dead)
+        {
+            ThrowToPot(dead.GetComponent<BasePawn>());
+        }
+    }
+
+    public void ThrowToPot(BasePawn pawn)
+    {
+        StartCoroutine(ProcessPotThrow(pawn));
+    }
+    
+    IEnumerator ProcessPotThrow(BasePawn takenPawn)
+    {
+        float beginTime = Time.time;
+        var beginPos = takenPawn.transform.position;
+        while (Time.time - beginTime < PotThrowDuration)
+        {
+            var newPos = Vector3.Lerp(beginPos, MainGame.Instance.Pot.transform.position, (Time.time - beginTime) / PotThrowDuration);
+
+            takenPawn.transform.position = newPos;
+
+            yield return null;
+        }
+            
+        Destroy(takenPawn.gameObject);
+        MainGame.Instance.Pot.Dmg.Heal(PotHealAmount);
     }
 }

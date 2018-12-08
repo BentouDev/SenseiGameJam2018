@@ -9,6 +9,8 @@ namespace Data.Scripts
         public Transform PointOfTaken;
         public string SlotName;
 
+        public Vector3 Offset;
+
         public Transform Provide()
         {
             if (!PointOfTaken)

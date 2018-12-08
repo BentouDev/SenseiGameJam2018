@@ -158,11 +158,16 @@ MonoBehaviour:
     type: 3}
   ReviveRadius: 4
   TakeRadius: 4
-  ReviveDuration: 5
+  ReviveDuration: 1.5
+  ReviveEffect: {fileID: 2112224923095627290, guid: 7012b0093c4a7469d9bea61d032e72e7,
+    type: 3}
   ThrowForce: 15
   MaxPotThrowDistance: 7
-  PotThrowDuration: 2
+  PotThrowDuration: 0.5
   PotHealAmount: 15
+  LayerBlendTime: 0.5
+  PositionBlendTime: 1
+  PositionBlendDelay: 2
   CurrentTarget: {fileID: 0}
   RevivedPawn: {fileID: 0}
   TakenPawn: {fileID: 0}
@@ -222,7 +227,7 @@ MonoBehaviour:
   WaveDelay: 2
   EnemyPrefab: {fileID: 6980002679990725122, guid: 8762b232d4b3f2a4ca076529f2615ea2,
     type: 3}
-  StartingEnemyCount: 5
+  StartingEnemyCount: 1
   EnemyCountCoefficient: 0.25
   WorldRadius: 30
   SpawnHeight: 1.5

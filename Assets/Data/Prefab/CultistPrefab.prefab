@@ -64,10 +64,13 @@ MonoBehaviour:
   Destination: {fileID: 0}
   TargetTag: 
   DestinationThreshold: 2
+  Checkpoint: {x: 0, y: 0, z: 0}
   TargetClassToFind: 1
   OnDestinationReached: {fileID: 2383684060337578230}
   TriggerRange: 15
   MaxPriority: 100
+  ThinkLag: 0.5
+  CornerProximity: 0.25
   Interruptable: 0
 --- !u!114 &2383684060337578230
 MonoBehaviour:
@@ -238,7 +241,7 @@ MonoBehaviour:
   Damageable: {fileID: 8880196071261601961}
   Anim: {fileID: 0}
   Grounder: {fileID: 0}
-  DrawHit: 1
+  DrawHit: 0
   RaycastMask:
     serializedVersion: 2
     m_Bits: 1
@@ -324,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149491a08b8237440b5232fc6bf79975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DrawDebug: 1
+  DrawDebug: 0
   InitOnStart: 0
   UseCachedControllSystem: 1
   System: {fileID: 0}
@@ -411,6 +414,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StandingUpTime: 1.5
+  GroundCheckMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &4371084126131981114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +430,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeadTrigger: {fileID: 8249499993101202326}
+  Driver: {fileID: 0}
+  Mask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &6457316860672631020
 GameObject:
   m_ObjectHideFlags: 0

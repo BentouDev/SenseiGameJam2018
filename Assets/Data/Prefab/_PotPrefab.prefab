@@ -174,7 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01cd34c867af52c4ca5dc95617fceeaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damageable: {fileID: 0}
+  Dmg: {fileID: 0}
+  DelayFromDmg: 1
+  PotThrowDuration: 0.5
+  PotHealAmount: 15
 --- !u!1 &7684584166929758841
 GameObject:
   m_ObjectHideFlags: 0

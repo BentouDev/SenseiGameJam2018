@@ -21,12 +21,17 @@ namespace Data.Scripts
         public float ReviveRadius;
         public float TakeRadius;
         public float ReviveDuration;
+        public GameObject ReviveEffect;
         
         [Header("Throw")]
         public float ThrowForce = 5;
         public float MaxPotThrowDistance = 7;
-        public float PotThrowDuration = 4;
-        public int PotHealAmount;
+        public float LayerBlendTime = 0.5f;
+        public float PositionBlendTime = 0.25f;
+        public float PositionBlendDelay = 1;
+        
+        private float StartOfLayerBlend;
+        private float StartOfPositionBlend;
 
         private Vector2 CurrentInput = Vector2.zero;
 
@@ -36,6 +41,9 @@ namespace Data.Scripts
         public BasePawn TakenPawn;
 
         private Transform PointOfTaken;
+        private Vector3 TakenOffset;
+
+        private bool CanThrow = true;
 
         public enum State
         {
@@ -51,6 +59,9 @@ namespace Data.Scripts
             base.OnInit();
 
             PointOfTaken = Pawn.GetComponent<PointOfTakenProvider>().Provide();
+            TakenOffset = Pawn.GetComponent<PointOfTakenProvider>().Offset;
+            Pawn.GetComponent<AnimCallback>().OnDoThrow.AddListener(EndThrow);
+            Pawn.GetComponent<AnimCallback>().OnEndPullUp.AddListener(EndPullUp);
         }
 
         protected override void OnProcessControll()
@@ -78,7 +89,7 @@ namespace Data.Scripts
                 {
                     DoTake();
                 }
-                else if (TakenPawn)
+                else if (CanThrow && TakenPawn)
                 {
                     TakenPawn.ResetBody();
                     TakenPawn.transform.localPosition = Vector3.zero;
@@ -159,7 +170,11 @@ namespace Data.Scripts
         IEnumerator ProcessRevive()
         {
             var oldSpeed = Pawn.Movement.MaxSpeed;
-            Pawn.MaxSpeed *= 0.5f;
+            Pawn.MaxSpeed *= 0.1f;
+
+            Instantiate(ReviveEffect, RevivedPawn.transform.position, Quaternion.Euler(0,0,90), RevivedPawn.transform); // ;__;
+
+            Pawn.Anim.SetTrigger("OnRevive");
             
             yield return new WaitForSeconds(ReviveDuration);
             
@@ -177,26 +192,45 @@ namespace Data.Scripts
             CurrentState = State.Idle;
         }
 
-        IEnumerator ProcessPotThrow(BasePawn takenPawn)
+
+        public void EndPullUp()
         {
-            float beginTime = Time.time;
-            var beginPos = takenPawn.transform.position;
-            while (Time.time - beginTime < PotThrowDuration)
+            Pawn.MaxSpeed = Pawn.Movement.MaxSpeed * 0.65f;
+            CanThrow = true;
+        }
+
+        public void EndThrow()
+        {
+            if (!TakenPawn)
+                return;
+            
+            TakenPawn.transform.SetParent(null, true);
+            var driver = TakenPawn.GetComponent<AIDriver>();
+
+            var dirToPot = MainGame.Instance.Pot.transform.position - Pawn.transform.position;
+            var distToPot = Vector3.Distance(MainGame.Instance.Pot.transform.position, Pawn.transform.position);
+            if (Vector3.Dot(dirToPot, Pawn.transform.forward) > 0.25f && distToPot < MaxPotThrowDistance)
             {
-                var newPos = Vector3.Lerp(beginPos, MainGame.Instance.Pot.transform.position,
-                    (Time.time - beginTime) / PotThrowDuration);
-
-                takenPawn.transform.position = newPos;
-
-                yield return null;
+                MainGame.Instance.Pot.ThrowToPot(TakenPawn);
+            }
+            else
+            {
+                // back online, but he will fall
+                TakenPawn.GetComponent<DeadBody>()
+                    .Throw(Vector3.Lerp(Pawn.transform.forward, Vector3.up, 0.5f) * ThrowForce);
             }
             
-            Destroy(takenPawn.gameObject);
-            MainGame.Instance.Pot.Dmg.Heal(PotHealAmount);
+            TakenPawn = null;
+            CurrentState = State.Idle;
+
+            Pawn.MaxSpeed = Pawn.Movement.MaxSpeed;
         }
 
         void DoTake()
         {
+            if (!CanThrow)
+                return;
+            
             if (CurrentState == State.Take)
             {
                 if (!TakenPawn)
@@ -207,38 +241,11 @@ namespace Data.Scripts
                 }
                 
                 // Perform throw
-                TakenPawn.transform.SetParent(null, true);
-                var driver = TakenPawn.GetComponent<AIDriver>();
 
-                var dirToPot = MainGame.Instance.Pot.transform.position - Pawn.transform.position;
-                var distToPot = Vector3.Distance(MainGame.Instance.Pot.transform.position, Pawn.transform.position);
-                if (Vector3.Dot(dirToPot, Pawn.transform.forward) > 0.25f && distToPot < MaxPotThrowDistance)
-                {
-                    StartCoroutine(ProcessPotThrow(TakenPawn));
-                }
-                else
-                {
-                    // back online, but he will fall
-                    // driver.EnableInput();
+                Pawn.Anim.SetLayerWeight(1, 0);
+                Pawn.Anim.SetTrigger("DoThrow");
 
-                    foreach (var child in TakenPawn.GetComponentsInChildren<Collider>())
-                    {
-                        child.enabled = true;
-                    }
-
-//                    var statePawn = TakenPawn as StatePawn;
-//                    if (statePawn)
-//                    {
-//                        statePawn.SwitchState<PawnThrown>();
-//                    }
-
-                    var force = Vector3.Lerp(Pawn.transform.forward, Vector3.up, 0.5f) * ThrowForce;
-                    // TakenPawn.ForceSum = 
-                    TakenPawn.Body.AddForce(force, ForceMode.Impulse);
-                }
-
-                TakenPawn = null;
-                CurrentState = State.Idle;
+                Pawn.MaxSpeed = 0;
 
                 return;
             }
@@ -259,14 +266,52 @@ namespace Data.Scripts
 
             if (TakenPawn)
             {
+                CanThrow = false;
+
                 var driver = TakenPawn.GetComponent<AIDriver>();
+                
                 // pull the plug
                 driver.DisableInput();
                 TakenPawn.ResetBody();
-                TakenPawn.transform.SetParent(PointOfTaken);
-                TakenPawn.transform.localPosition = Vector3.zero;
+
+                Pawn.Anim.SetTrigger("OnTake");
+                StartCoroutine(AnimateLayer(0, 1));
+                StartCoroutine(AnimatePosition());
                 
                 CurrentState = State.Take;
+
+                Pawn.MaxSpeed = 0;
+            }
+        }
+
+        IEnumerator AnimatePosition()
+        {
+            yield return new WaitForSeconds(PositionBlendDelay);
+
+            StartOfPositionBlend = Time.time;
+
+            var startPos = TakenPawn.transform.position;
+            while (Time.time - StartOfPositionBlend < PositionBlendTime)
+            {
+                TakenPawn.transform.position = Vector3.Lerp(startPos, PointOfTaken.position + TakenOffset, (Time.time - StartOfPositionBlend) / Time.time - StartOfPositionBlend);
+                yield return null;
+            }
+
+            TakenPawn.transform.SetParent(PointOfTaken);
+            TakenPawn.transform.localPosition = TakenOffset;
+        }
+
+        IEnumerator AnimateLayer(float from, float to)
+        {
+            StartOfLayerBlend = Time.time;
+            
+            while (Time.time - StartOfLayerBlend < LayerBlendTime)
+            {
+                float magnitude = (Time.time - StartOfLayerBlend) / LayerBlendTime;
+                
+                Pawn.Anim.SetLayerWeight(1, Mathf.Lerp(from, to, magnitude));
+
+                yield return null;
             }
         }
 

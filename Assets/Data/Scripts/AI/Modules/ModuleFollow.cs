@@ -128,6 +128,12 @@ public class ModuleFollow : AIModule
     protected override Vector3 OnProcessMovement()
     {
         Vector3 direction = Vector3.zero;
+        if (!Destination)
+        {
+            Driver.SwitchToBestModule();
+            return direction;
+        }
+        
         if (HasReachedDestination())
         {
             Driver.SwitchModule(OnDestinationReached);

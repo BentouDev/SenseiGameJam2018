@@ -8,4 +8,353 @@ AvatarMask:
   m_PrefabAsset: {fileID: 0}
   m_Name: Up
   m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
-  m_Elements: []
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Body
+    m_Weight: 0
+  - m_Path: Demon
+    m_Weight: 0
+  - m_Path: Demon/Hair
+    m_Weight: 1
+  - m_Path: Demon/Head
+    m_Weight: 1
+  - m_Path: Demon_0006:transform1
+    m_Weight: 0
+  - m_Path: Demon_0006:transform2
+    m_Weight: 0
+  - m_Path: Human_Rig
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL/Demon_0006:Shoulder_Ring_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL/Demon_0006:Shoulder_Ring_CTL/Demon_0006:Head_CTL
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL/Demon_0006:Shoulder_Ring_CTL/Demon_0006:Head_CTL/Demon_0006:nurbsCircle10
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL/Demon_0006:Shoulder_Ring_CTL/Demon_0006:L_Shoulder_CTL
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL/Demon_0006:Shoulder_Ring_CTL/Demon_0006:L_Shoulder_CTL/Demon_0006:L_FK_CTL_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL/Demon_0006:Shoulder_Ring_CTL/Demon_0006:L_Shoulder_CTL/Demon_0006:L_FK_CTL_1/Demon_0006:L_FK_CTL_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL/Demon_0006:Shoulder_Ring_CTL/Demon_0006:L_Shoulder_CTL/Demon_0006:L_FK_CTL_1/Demon_0006:L_FK_CTL_2/Demon_0006:L_FK_CTL_3
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL/Demon_0006:Shoulder_Ring_CTL/Demon_0006:R_Shoulder_CTL
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL/Demon_0006:Shoulder_Ring_CTL/Demon_0006:R_Shoulder_CTL/Demon_0006:R_FK_CTL_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL/Demon_0006:Shoulder_Ring_CTL/Demon_0006:R_Shoulder_CTL/Demon_0006:R_FK_CTL_1/Demon_0006:R_FK_CTL_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Body_CTL/Demon_0006:nurbsCircle12/Demon_0006:Stomach_CTL/Demon_0006:Chest_CTL/Demon_0006:Shoulder_Ring_CTL/Demon_0006:R_Shoulder_CTL/Demon_0006:R_FK_CTL_1/Demon_0006:R_FK_CTL_2/Demon_0006:R_FK_CTL_3
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:L_Elbow_PV_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:L_IK_CTL_1
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:L_Leg_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:L_Leg_CTL/Demon_0006:L_Knee_PV_CTL
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:L_Leg_CTL/Demon_0006:L_Toes
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:L_Leg_CTL/Demon_0006:nurbsCircle7
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:L_TwoHanded_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:R_Elbow_PV_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:R_IK_CTL_2
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:R_IK_CTL_2/Demon_0006:Support_hand_parking
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:R_Leg_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:R_Leg_CTL/Demon_0006:nurbsCircle8
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:R_Leg_CTL/Demon_0006:R_Knee_PV_CTL
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:R_Leg_CTL/Demon_0006:R_Toes
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:R_TwoHanded_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:L_Leg_1
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:L_Leg_1/Demon_0006:L_Buttock
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:L_Leg_1/Demon_0006:L_Leg_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:L_Leg_1/Demon_0006:L_Leg_2/Demon_0006:L_Calf
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:L_Leg_1/Demon_0006:L_Leg_2/Demon_0006:L_Leg_3
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:L_Leg_1/Demon_0006:L_Leg_2/Demon_0006:L_Leg_3/Demon_0006:L_Leg_4
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:L_Leg_1/Demon_0006:L_Leg_2/Demon_0006:L_Leg_3/Demon_0006:L_Leg_4/Demon_0006:L_Foot_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:L_Leg_1/Demon_0006:L_Leg_2/Demon_0006:L_Leg_3/Demon_0006:L_Leg_4/Demon_0006:L_Foot_1/Demon_0006:L_Foot_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:L_Leg_1/Demon_0006:L_Leg_2/Demon_0006:L_Leg_3/Demon_0006:L_Leg_4/Demon_0006:L_Foot_1/Demon_0006:L_Foot_2/Demon_0006:joint1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:L_Leg_1/Demon_0006:L_Leg_2/Demon_0006:L_Leg_3/Demon_0006:L_Leg_4/Demon_0006:L_Foot_1/Demon_0006:L_Foot_2/Demon_0006:joint1/Demon_0006:L_Foot_3
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:R_Leg_1
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:R_Leg_1/Demon_0006:R_Buttock
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:R_Leg_1/Demon_0006:R_Leg_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:R_Leg_1/Demon_0006:R_Leg_2/Demon_0006:R_Calf
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:R_Leg_1/Demon_0006:R_Leg_2/Demon_0006:R_Leg_3
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:R_Leg_1/Demon_0006:R_Leg_2/Demon_0006:R_Leg_3/Demon_0006:R_Reg_4
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:R_Leg_1/Demon_0006:R_Leg_2/Demon_0006:R_Leg_3/Demon_0006:R_Reg_4/Demon_0006:R_Foot_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:R_Leg_1/Demon_0006:R_Leg_2/Demon_0006:R_Leg_3/Demon_0006:R_Reg_4/Demon_0006:R_Foot_1/Demon_0006:R_Foot_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:R_Leg_1/Demon_0006:R_Leg_2/Demon_0006:R_Leg_3/Demon_0006:R_Reg_4/Demon_0006:R_Foot_1/Demon_0006:R_Foot_2/Demon_0006:joint2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:R_Leg_1/Demon_0006:R_Leg_2/Demon_0006:R_Leg_3/Demon_0006:R_Reg_4/Demon_0006:R_Foot_1/Demon_0006:R_Foot_2/Demon_0006:joint2/Demon_0006:R_Foot_3
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Indicative_finger_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Indicative_finger_1/Demon_0006:L_Indicative_finger_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Indicative_finger_1/Demon_0006:L_Indicative_finger_2/Demon_0006:L_Indicative_finger_top
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Middle_finger_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Middle_finger_1/Demon_0006:L_Ling_finger_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Middle_finger_1/Demon_0006:L_Ling_finger_1/Demon_0006:L_Ling_finger_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Middle_finger_1/Demon_0006:L_Ling_finger_1/Demon_0006:L_Ling_finger_2/Demon_0006:L_Ling_finger_top
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Middle_finger_1/Demon_0006:L_Ling_finger_1/Demon_0006:L_Little_finger_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Middle_finger_1/Demon_0006:L_Ling_finger_1/Demon_0006:L_Little_finger_1/Demon_0006:L_Little_finger_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Middle_finger_1/Demon_0006:L_Ling_finger_1/Demon_0006:L_Little_finger_1/Demon_0006:L_Little_finger_2/Demon_0006:L_Little_finger_top
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Middle_finger_1/Demon_0006:L_Middle_finger_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Middle_finger_1/Demon_0006:L_Middle_finger_2/Demon_0006:L_Middle_finger_top
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Thumb_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Thumb_1/Demon_0006:L_Thumb_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Arm_4/Demon_0006:L_Arm_5/Demon_0006:L_Hand_1/Demon_0006:L_Thumb_1/Demon_0006:L_Thumb_2/Demon_0006:L_Thumb_top
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:L_Arm_1/Demon_0006:L_Arm_2/Demon_0006:L_Arm_3/Demon_0006:L_Biceps
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Indicative_finger_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Indicative_finger_1/Demon_0006:R_Indicative_finger_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Indicative_finger_1/Demon_0006:R_Indicative_finger_2/Demon_0006:R_Indicative_finger_top
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Middle_finger_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Middle_finger_1/Demon_0006:R_Middle_finger_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Middle_finger_1/Demon_0006:R_Middle_finger_2/Demon_0006:R_Middle_finger_top
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Middle_finger_1/Demon_0006:R_Ring_finger_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Middle_finger_1/Demon_0006:R_Ring_finger_1/Demon_0006:R_Ring_finger_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Middle_finger_1/Demon_0006:R_Ring_finger_1/Demon_0006:R_Ring_finger_2/Demon_0006:R_Ring_finger_top
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Middle_finger_1/Demon_0006:R_Ring_finger_1/Demon_0006:R_Rittle_finger_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Middle_finger_1/Demon_0006:R_Ring_finger_1/Demon_0006:R_Rittle_finger_1/Demon_0006:R_Rittle_finger_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Middle_finger_1/Demon_0006:R_Ring_finger_1/Demon_0006:R_Rittle_finger_1/Demon_0006:R_Rittle_finger_2/Demon_0006:R_Rittle_finger_top
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Thumb_1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Thumb_1/Demon_0006:R_Thumb_2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Arm_4/Demon_0006:R_Arm_5/Demon_0006:R_Hand_1/Demon_0006:R_Thumb_1/Demon_0006:R_Thumb_2/Demon_0006:R_Thumb_top
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:R_Arm_1/Demon_0006:R_Arm_2/Demon_0006:R_Arm_3/Demon_0006:R_Biceps
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:Spin_5
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:Spin_5/Demon_0006:Head
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:Spin_5/Demon_0006:Head/Demon_0006:Head_top
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Demon_0006:Mother_joint/Demon_0006:Spin_1/Demon_0006:Spin_2/Demon_0006:Spin_3/Demon_0006:Spin_4/Demon_0006:Spin_5/Demon_0006:Head/Demon_0006:Jaw
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Root/Victim
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL/Demon_0006:Controler
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL/Demon_0006:nurbsCircle1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL1
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL1/Demon_0006:Controler
+      1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL1/Demon_0006:nurbsCircle11
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL6
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL6/Demon_0006:Controler
+      2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL6/Demon_0006:nurbsCircle1
+      1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL7
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL7/Demon_0006:Controler
+      3
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Scale_Slider_CTL7/Demon_0006:nurbsCircle9
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Char_CTL/Demon_0006:Weapon_2H
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:IK_handles
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:IK_handles/Demon_0006:ikHandle1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:IK_handles/Demon_0006:ikHandle2
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:IK_handles/Demon_0006:ikHandle3
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:IK_handles/Demon_0006:ikHandle4
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:IK_handles/Demon_0006:ikHandle5
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:IK_handles/Demon_0006:ikHandle6
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:IK_handles/Demon_0006:ikHandle7
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:IK_handles/Demon_0006:ikHandle8
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:locator1
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:locator1/Demon_0006:IK_FK_CTL
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:locator1/Demon_0006:IK_FK_CTL/Demon_0006:IK_FK_switcher
+      1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:locator1/Demon_0006:IK_FK_CTL/Demon_0006:IK_FK_switcher
+      1/Demon_0006:FK 1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:locator1/Demon_0006:IK_FK_CTL/Demon_0006:IK_FK_switcher
+      1/Demon_0006:IK 1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:locator1/Demon_0006:L_FNGR_CTL 1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:locator1/Demon_0006:L_Point_FNGR_CTL 1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:locator1/Demon_0006:L_Thumb_FNGR_CTL 1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:R_Hand_Locator
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:R_Hand_Locator/Demon_0006:IK_FK_CTL1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:R_Hand_Locator/Demon_0006:IK_FK_CTL1/Demon_0006:IK_FK_switcher
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:R_Hand_Locator/Demon_0006:IK_FK_CTL1/Demon_0006:IK_FK_switcher/Demon_0006:FK
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:R_Hand_Locator/Demon_0006:IK_FK_CTL1/Demon_0006:IK_FK_switcher/Demon_0006:IK
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:R_Hand_Locator/Demon_0006:L_FNGR_CTL
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:R_Hand_Locator/Demon_0006:L_Point_FNGR_CTL
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:R_Hand_Locator/Demon_0006:L_Thumb_FNGR_CTL
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Useless_CTL
+    m_Weight: 0
+  - m_Path: Human_Rig/Demon_0006:Useless_CTL/Demon_0006:R_Arm_CTL1
+    m_Weight: 1
+  - m_Path: Human_Rig/Demon_0006:Useless_CTL/Demon_0006:R_LegScaling_CTL5
+    m_Weight: 1
+  - m_Path: Victim_controller
+    m_Weight: 0
+  - m_Path: Weapons
+    m_Weight: 0
+  - m_Path: Weapons/Demon_0006:Hand_Weapon_1
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:Hand_Weapon_2
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:Support_hand_CTL
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:TwoHanded_Weapon
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:TwoHanded_Weapon/Demon_0006:joint8
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:TwoHanded_Weapon/Demon_0006:locator3
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:TwoHanded_Weapon/Demon_0006:locator4
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:Weapon_1
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:Weapon_1/Demon_0006:joint4
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:Weapon_1_Resp
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:Weapon_2
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:Weapon_2/Demon_0006:joint6
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:Weapon_2_Resp
+    m_Weight: 1
+  - m_Path: Weapons/Demon_0006:Weapon_2_Resp1
+    m_Weight: 1
