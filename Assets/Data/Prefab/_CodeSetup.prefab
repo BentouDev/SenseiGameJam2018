@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8448132328904698392}
+  - component: {fileID: 1364492530}
+  - component: {fileID: 1364492531}
   m_Layer: 0
   m_Name: _CodeSetup
-  m_TagString: Untagged
+  m_TagString: MainState
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,3 +32,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1364492530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8448132328904698395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eacd019ecf3432f9753f2b235aeb28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scheduler: {fileID: 1364492531}
+  WaveStartEvent: OnWaveBegin
+  WaveEndEvent: OnWaveEnd
+  WaveDelay: 2
+  EnemyPrefab: {fileID: 6980002679990725122, guid: 8762b232d4b3f2a4ca076529f2615ea2,
+    type: 3}
+  StartingEnemyCount: 5
+  EnemyCountCoefficient: 0.25
+  WorldRadius: 20
+  SpawnHeight: 1.5
+--- !u!114 &1364492531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8448132328904698395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e48dd952badf9847b32e12702412da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Events:
+  - Name: OnWaveBegin
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - Name: OnWaveEnd
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
