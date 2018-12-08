@@ -5374,8 +5374,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5379588035872351678, guid: bfe4387b647043644b1c82a261181759,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 9
+      propertyPath: m_LocalPosition.x
+      value: 3.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379588035872351678, guid: bfe4387b647043644b1c82a261181759,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.342
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379588035872351678, guid: bfe4387b647043644b1c82a261181759,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.73
       objectReference: {fileID: 0}
     - target: {fileID: 5379588035872351678, guid: bfe4387b647043644b1c82a261181759,
         type: 3}
@@ -5394,18 +5404,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5379588035872351678, guid: bfe4387b647043644b1c82a261181759,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.68
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5379588035872351678, guid: bfe4387b647043644b1c82a261181759,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10.73
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5379588035872351678, guid: bfe4387b647043644b1c82a261181759,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.342
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379588035872351678, guid: bfe4387b647043644b1c82a261181759,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379588035872351678, guid: bfe4387b647043644b1c82a261181759,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfe4387b647043644b1c82a261181759, type: 3}
@@ -5743,16 +5763,6 @@ PrefabInstance:
         type: 3}
       propertyPath: DelayFromDmg
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8531352411516193790, guid: a68063fe9e8fed34fa7bc9ceb7f32970,
-        type: 3}
-      propertyPath: PotThrowDuration
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8531352411516193790, guid: a68063fe9e8fed34fa7bc9ceb7f32970,
-        type: 3}
-      propertyPath: PotHealAmount
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8490665414933970163, guid: a68063fe9e8fed34fa7bc9ceb7f32970,
         type: 3}

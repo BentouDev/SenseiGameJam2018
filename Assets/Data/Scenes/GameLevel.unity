@@ -1958,11 +1958,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: _TomekWorld
       objectReference: {fileID: 0}
-    - target: {fileID: 2145334424131793474, guid: aa2634949a45b4b4eb2c1a74d5711280,
-        type: 3}
-      propertyPath: PotThrowDuration
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5098044692333406220, guid: aa2634949a45b4b4eb2c1a74d5711280,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2123,9 +2118,5 @@ PrefabInstance:
       propertyPath: PawnCamera
       value: 
       objectReference: {fileID: 5098044692711446652}
-    - target: {fileID: 858735982, guid: d4570035230ee514681e81de49f57fcd, type: 3}
-      propertyPath: PositionBlendDelay
-      value: 0.75
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4570035230ee514681e81de49f57fcd, type: 3}

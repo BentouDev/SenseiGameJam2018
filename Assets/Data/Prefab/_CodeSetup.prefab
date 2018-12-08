@@ -163,11 +163,9 @@ MonoBehaviour:
     type: 3}
   ThrowForce: 15
   MaxPotThrowDistance: 7
-  PotThrowDuration: 0.5
-  PotHealAmount: 15
   LayerBlendTime: 0.5
   PositionBlendTime: 1
-  PositionBlendDelay: 2
+  PositionBlendDelay: 0.75
   CurrentTarget: {fileID: 0}
   RevivedPawn: {fileID: 0}
   TakenPawn: {fileID: 0}
