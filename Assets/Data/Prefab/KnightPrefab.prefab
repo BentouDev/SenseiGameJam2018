@@ -146,14 +146,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DebugDisable: 0
-  DrawDebug: 0
+  DrawDebug: 1
   Destination: {fileID: 0}
   TargetTag: PotMain
   DestinationThreshold: 2
+  Checkpoint: {x: 0, y: 0, z: 0}
   TargetClassToFind: 0
   OnDestinationReached: {fileID: 6633725039793294424}
   TriggerRange: 100
   MaxPriority: 25
+  ThinkLag: 0.5
+  CornerProximity: 0.25
   Interruptable: 1
 --- !u!114 &4634765072029834538
 MonoBehaviour:
@@ -168,14 +171,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DebugDisable: 0
-  DrawDebug: 0
+  DrawDebug: 1
   Destination: {fileID: 0}
   TargetTag: 
   DestinationThreshold: 2
+  Checkpoint: {x: 0, y: 0, z: 0}
   TargetClassToFind: 2
   OnDestinationReached: {fileID: 6633725039793294424}
   TriggerRange: 15
   MaxPriority: 35
+  ThinkLag: 0.5
+  CornerProximity: 0.25
   Interruptable: 1
 --- !u!114 &5353252108026793339
 MonoBehaviour:
@@ -194,10 +200,13 @@ MonoBehaviour:
   Destination: {fileID: 0}
   TargetTag: Player
   DestinationThreshold: 2
+  Checkpoint: {x: 0, y: 0, z: 0}
   TargetClassToFind: 0
   OnDestinationReached: {fileID: 6633725039793294424}
   TriggerRange: 3
   MaxPriority: 45
+  ThinkLag: 0.5
+  CornerProximity: 0.25
   Interruptable: 0
 --- !u!114 &6633725039793294424
 MonoBehaviour:
@@ -678,6 +687,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StandingUpTime: 1.5
+  GroundCheckMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &7125579175933565045
 MonoBehaviour:
   m_ObjectHideFlags: 0

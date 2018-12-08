@@ -161,6 +161,7 @@ public class ModuleFollow : AIModule
             }
             
             var diff = transform.position - Path.corners[PathProgress + 1];
+                diff.y = 0;
 
             if (diff.magnitude < CornerProximity)
                 PathProgress++;

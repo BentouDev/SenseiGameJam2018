@@ -192,13 +192,20 @@ namespace Data.Scripts
             }
             
             Destroy(takenPawn.gameObject);
-            MainGame.Instance.Pot.Damageable.Heal(PotHealAmount);
+            MainGame.Instance.Pot.Dmg.Heal(PotHealAmount);
         }
 
         void DoTake()
         {
             if (CurrentState == State.Take)
             {
+                if (!TakenPawn)
+                {
+                    CurrentState = State.Idle;
+                    Debug.DebugBreak();
+                    return;
+                }
+                
                 // Perform throw
                 TakenPawn.transform.SetParent(null, true);
                 var driver = TakenPawn.GetComponent<AIDriver>();

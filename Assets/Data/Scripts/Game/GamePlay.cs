@@ -7,8 +7,10 @@ using UnityEngine;
 
 public class GamePlay : GameState
 {
-    [Header("Cauldron")] 
+    [Header("Master")] 
     public PotController Pot;
+
+    public BasePlayerController Player;
     
     [Header("Wave")]
     [RequireValue]
@@ -54,11 +56,14 @@ public class GamePlay : GameState
     {
         if (!Pot.IsAlive)
             MainGame.Instance.SwitchState<GameLose>();
+        
+        if (!Player.Pawn.IsAlive())
+            MainGame.Instance.SwitchState<GameLose>();
 
         if (InLimbo)
             return;
 
-        if (CurrentWaveEnemies.All(e => !e.IsAlive()))
+        if (CurrentWaveEnemies.All(e => !e || !e.IsAlive()))
         {
             StartCoroutine(EndWave());
         }
@@ -70,7 +75,8 @@ public class GamePlay : GameState
         {
             foreach (var enemy in CurrentWaveEnemies)
             {
-                MainGame.Instance.Controllers.Unregister(enemy.GetComponent<Controller>());
+                if (enemy)
+                    MainGame.Instance.Controllers.Unregister(enemy.GetComponent<Controller>());
             }
         
             CurrentWaveEnemies.Clear();

@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pot: {fileID: 0}
+  Player: {fileID: 858735982}
   Scheduler: {fileID: 1364492531}
   WaveStartEvent: OnWaveBegin
   WaveEndEvent: OnWaveEnd
