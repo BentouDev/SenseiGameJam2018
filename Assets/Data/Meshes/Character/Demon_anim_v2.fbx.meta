@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 30e928dcff098244db96c73420c4cdb1
+guid: 8b246e0ea74796f46b68e578db5a44d2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -171,7 +171,9 @@ ModelImporter:
     100330: Hair
     100332: Head
     100334: Human_Rig
-    100336: Weapons
+    100336: Victim
+    100338: Victim_controller
+    100340: Weapons
     400000: Body
     400002: Demon
     400004: Demon_0006:Body_CTL
@@ -340,7 +342,9 @@ ModelImporter:
     400330: Hair
     400332: Head
     400334: Human_Rig
-    400336: Weapons
+    400336: Victim
+    400338: Victim_controller
+    400340: Weapons
     2100000: DemonessBody
     2100002: Hair
     2100004: lambert1
@@ -446,6 +450,7 @@ ModelImporter:
     11400172: Demon_0006:Weapon_2H
     11400174: Hair
     11400176: Head
+    11400178: Victim
     13700000: Body
     13700002: Hair
     13700004: Head
