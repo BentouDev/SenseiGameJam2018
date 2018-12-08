@@ -13,7 +13,7 @@ public class AIDriver : Controller
 
     protected HashSet<AIModule> ModuleHistory = new HashSet<AIModule>();
     protected List<AIModule>    AllModules    = new List<AIModule>();
-    public    BasePawn          CurrentEnemy { get; private set; }
+    public    Damageable        CurrentEnemy { get; private set; }
     
     public Stamina Stamina { get; private set; }
     public AbilityContainer Abilities { get; private set; }
@@ -51,15 +51,17 @@ public class AIDriver : Controller
         SwitchModule(PickBestModule());
     }
     
-    public void ObtainEnemy(BasePawn playerPawn)
+    public void ObtainEnemy(Damageable pawn)
     {
-        if (playerPawn != Pawn)
-            CurrentEnemy = playerPawn;
+        if (pawn != Pawn && (!pawn || pawn.IsAlive))
+            CurrentEnemy = pawn;
     }
 
     public void Kill()
     {
         DisableInput();
+        MainGame.Instance.OnAIKilled(this);
+        
         // MainGame.Instance.AIDirector.OnAIDestroyed(this);
 
         // Odpal animacje znikania
@@ -83,16 +85,23 @@ public class AIDriver : Controller
             Kill();
         }
 
+        if (CurrentEnemy && !CurrentEnemy.IsAlive)
+        {
+            CurrentEnemy = null;
+            
+            SwitchToBestModule();
+        }
+
         if (NextModule)
         {
             SwitchModuleInternal(NextModule);
             NextModule = null;
         }
 
-        //WasAlive = Damageable.IsAlive;
+        WasAlive = Pawn.Damageable.IsAlive;
 
         Vector3 direction = Vector3.zero;
-        if (Enabled)
+        if (Enabled && Pawn.IsAlive())
         {
             if (ActiveModule)
                 direction = ActiveModule.ProcessMovement();
@@ -102,6 +111,7 @@ public class AIDriver : Controller
         else
         {
             direction = Vector3.zero;
+            Pawn.ResetBody();
         }
 
         Abilities.Tick();
@@ -118,7 +128,10 @@ public class AIDriver : Controller
                 ActiveModule.FixedTick();
         }
 
-        Pawn.FixedTick();
+        if (Pawn)
+        {
+            Pawn.FixedTick();
+        }
     }
 
     protected override void OnLateTick()
@@ -129,7 +142,8 @@ public class AIDriver : Controller
                 ActiveModule.LateTick();
         }
 
-        Pawn.LateTick();
+        if (Pawn)
+            Pawn.LateTick();
     }
 
     public void SwitchModule(AIModule newModule)
