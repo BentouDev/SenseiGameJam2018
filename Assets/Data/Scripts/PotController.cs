@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class PotController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Damageable Damageable;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool IsAlive => Damageable && Damageable.IsAlive;
 }

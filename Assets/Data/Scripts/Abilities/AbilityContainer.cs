@@ -6,6 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(Stamina))]
 public class AbilityContainer : MonoBehaviour, ITickable
 {
+    [Header("Meta")]
+    public bool InitOnStart = true;
+    
+    [Header("Props")]
 	[HideInInspector]
     public List<Ability> ButtonAbilities;
 
@@ -30,6 +34,12 @@ public class AbilityContainer : MonoBehaviour, ITickable
     private int CurrentIndex;
 
     public float Elapsed { get; private set; }
+
+    void Start()
+    {
+        if (InitOnStart)
+            Init();
+    }
 
 	public bool CanSwitchAbility()
 	{

@@ -95,7 +95,10 @@ GameObject:
   - component: {fileID: 7459046225181711368}
   - component: {fileID: 7956355533679375140}
   - component: {fileID: 8852879680692627284}
+  - component: {fileID: 4634765072029834538}
   - component: {fileID: 5353252108026793339}
+  - component: {fileID: 6633725039793294424}
+  - component: {fileID: 8178929078745897946}
   m_Layer: 10
   m_Name: _Modules
   m_TagString: Untagged
@@ -143,13 +146,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DebugDisable: 0
-  DrawDebug: 1
+  DrawDebug: 0
   Destination: {fileID: 0}
   TargetTag: PotMain
   DestinationThreshold: 2
-  OnDestinationReached: {fileID: 0}
+  TargetClassToFind: 0
+  OnDestinationReached: {fileID: 6633725039793294424}
   TriggerRange: 100
-  MaxPriority: 50
+  MaxPriority: 25
+  Interruptable: 1
+--- !u!114 &4634765072029834538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835264177861007443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02798035e399c4d4197882b8289f972c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugDisable: 0
+  DrawDebug: 0
+  Destination: {fileID: 0}
+  TargetTag: 
+  DestinationThreshold: 2
+  TargetClassToFind: 2
+  OnDestinationReached: {fileID: 6633725039793294424}
+  TriggerRange: 15
+  MaxPriority: 35
   Interruptable: 1
 --- !u!114 &5353252108026793339
 MonoBehaviour:
@@ -164,14 +190,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DebugDisable: 0
-  DrawDebug: 1
+  DrawDebug: 0
   Destination: {fileID: 0}
   TargetTag: Player
   DestinationThreshold: 2
-  OnDestinationReached: {fileID: 0}
+  TargetClassToFind: 0
+  OnDestinationReached: {fileID: 6633725039793294424}
   TriggerRange: 3
-  MaxPriority: 100
+  MaxPriority: 45
   Interruptable: 0
+--- !u!114 &6633725039793294424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835264177861007443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156b9a6a3cda66b40ba4787498e49f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugDisable: 0
+  DebugDraw: 0
+  Collision:
+  - Offset: {x: 0, y: 0, z: 0}
+    Distance: 2
+    Mask:
+      serializedVersion: 2
+      m_Bits: 2049
+  AbilityToUse: {fileID: 8178929078745897946}
+  NextModule: {fileID: 7956355533679375140}
+  ShuffleIfPossible: 0
+--- !u!114 &8178929078745897946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835264177861007443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d42c7ebac8b10d45babb7082f9cd9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enabled: 1
+  Name: Ability
+  Icon: {fileID: 0}
+  Button: 
+  CooldownTime: 1.25
+  StaminaCost: 0
+  StaminaRequirement: 0
+  Duration: 0.25
+  ActiveBegin: 0
+  ActiveEnd: 1
+  InvincibilityFrames: 0
+  InvBegin: 0
+  InvEnd: 0
+  Dmg: 1
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5680546873346281535
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +311,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4fa6fb54000baa846af3f53ae530244d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -264,6 +345,50 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6379416965348162368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 265804532636639188}
+  - component: {fileID: 5681742162024580546}
+  m_Layer: 10
+  m_Name: Dead
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &265804532636639188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379416965348162368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8199051999658669473}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5681742162024580546
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379416965348162368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6980002679990725122
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,11 +403,13 @@ GameObject:
   - component: {fileID: 6500669852599112807}
   - component: {fileID: 912244354238502490}
   - component: {fileID: 8591298099773656443}
+  - component: {fileID: 6302751216996397127}
   - component: {fileID: 8833845439714471334}
   - component: {fileID: 6853120889020714073}
   - component: {fileID: 2143573654777229530}
   - component: {fileID: 5807704220402602783}
   - component: {fileID: 4323070714973505433}
+  - component: {fileID: 7125579175933565045}
   m_Layer: 10
   m_Name: KnightPrefab
   m_TagString: Untagged
@@ -304,6 +431,7 @@ Transform:
   - {fileID: 1089087861665314049}
   - {fileID: 65705018624533112}
   - {fileID: 7459046225181711368}
+  - {fileID: 265804532636639188}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -427,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149491a08b8237440b5232fc6bf79975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DrawDebug: 1
+  DrawDebug: 0
   InitOnStart: 1
   UseCachedControllSystem: 1
   System: {fileID: 0}
@@ -454,6 +582,19 @@ MonoBehaviour:
   RegeneratePerSec: 0
   RegenerateDelay: 1
   RegeneratePenaltyDelay: 5
+--- !u!114 &6302751216996397127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6980002679990725122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d1207a4cde489f8f5c26d42b80cbc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Class: 1
 --- !u!114 &8833845439714471334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81df871e37d8ba84783cc9db464eed58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InitOnStart: 1
   ButtonAbilities: []
   GenericAbilities: []
   Stamina: {fileID: 8591298099773656443}
@@ -522,6 +664,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fffa09605c353b4e8baf653499e3a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7125579175933565045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6980002679990725122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b359b15877944c8aaaa88b19593f958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeadTrigger: {fileID: 5681742162024580546}
 --- !u!1 &7257201012015169645
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7257201012015169645}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 65705018624533112}
@@ -564,7 +719,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 32
   m_CookieSize: 10
