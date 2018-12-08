@@ -85,23 +85,26 @@ public class AIDriver : Controller
             Kill();
         }
 
-        if (CurrentEnemy && !CurrentEnemy.IsAlive)
+        if (Enabled)
         {
-            CurrentEnemy = null;
+            if (CurrentEnemy && !CurrentEnemy.IsAlive)
+            {
+                CurrentEnemy = null;
             
-            SwitchToBestModule();
-        }
+                SwitchToBestModule();
+            }
 
-        if (NextModule)
-        {
-            SwitchModuleInternal(NextModule);
-            NextModule = null;
+            if (NextModule)
+            {
+                SwitchModuleInternal(NextModule);
+                NextModule = null;
+            }
         }
-
+        
         WasAlive = Pawn.Damageable.IsAlive;
 
         Vector3 direction = Vector3.zero;
-        if (Enabled && Pawn.IsAlive())
+        if (Enabled && Pawn.IsAlive() && CanMove())
         {
             if (ActiveModule)
                 direction = ActiveModule.ProcessMovement();
@@ -118,6 +121,17 @@ public class AIDriver : Controller
         
         Pawn.ProcessMovement(direction);
         Pawn.Tick();
+    }
+
+    protected bool CanMove()
+    {
+        var statePawn = Pawn as StatePawn;
+        if (statePawn && statePawn.CurrentState is PawnThrown)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     protected override void OnFixedTick()
