@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 5098044692711446628}
   - component: {fileID: 5098044692711446629}
   - component: {fileID: 5098044692711446650}
+  - component: {fileID: 5098044692711446652}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -325,6 +326,37 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5098044692711446651}
   m_Enabled: 1
+--- !u!114 &5098044692711446652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098044692711446651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bef3f4f218647c40b666a884e0f50c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitOnStart: 1
+  Autoupdate: 0
+  DrawDebug: 0
+  TargetTag: Player
+  Target: {fileID: 0}
+  LockOn: {fileID: 0}
+  LookX: Look X
+  LookY: Look Y
+  Mask:
+    serializedVersion: 2
+    m_Bits: 1
+  RotatedOffset: {x: 0, y: 0, z: -4}
+  FlatOffset: {x: 0, y: 0, z: 0}
+  SpeedX: 2
+  SpeedY: 2
+  MaxAngleY: 45
+  MinAngleY: -45
+  AngleX: 0
+  AngleY: 0
 --- !u!1 &5098044692941821960
 GameObject:
   m_ObjectHideFlags: 0

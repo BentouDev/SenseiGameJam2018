@@ -13,6 +13,11 @@ public class ModuleFollow : AIModule
 
     public float TriggerRange = 5;
     
+    [Range(0, 100)]
+    public float MaxPriority = 100;
+
+    public bool Interruptable;
+    
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -37,7 +42,7 @@ public class ModuleFollow : AIModule
         
         var diff = Destination.transform.position - Pawn.transform.position;
         if (diff.magnitude < TriggerRange && !HasReachedDestination())
-            return 100;
+            return MaxPriority;
 
         return 0;
     }
@@ -82,6 +87,9 @@ public class ModuleFollow : AIModule
         {
             var diff = Destination.position - transform.position;
             direction = diff.normalized;
+                
+            if (Interruptable)
+                Driver.SwitchToBestModule();
         }
 
         return direction;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8163466254858722340}
   - component: {fileID: 1594542164792214334}
   - component: {fileID: 3247226790840566069}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8094312892089107935}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: _PotPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

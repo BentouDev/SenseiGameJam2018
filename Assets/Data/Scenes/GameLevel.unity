@@ -118,6 +118,18 @@ Light:
     type: 3}
   m_PrefabInstance: {fileID: 5098044692776350261}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5098044692711446652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5098044692711446652, guid: aa2634949a45b4b4eb2c1a74d5711280,
+    type: 3}
+  m_PrefabInstance: {fileID: 5098044692776350261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bef3f4f218647c40b666a884e0f50c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5098044692776350261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -254,5 +266,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1985043093, guid: d4570035230ee514681e81de49f57fcd, type: 3}
+      propertyPath: PawnCamera
+      value: 
+      objectReference: {fileID: 5098044692711446652}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4570035230ee514681e81de49f57fcd, type: 3}
