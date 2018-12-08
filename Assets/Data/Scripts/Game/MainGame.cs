@@ -5,6 +5,16 @@ using Framework;
 
 public class MainGame : Game<MainGame>
 {
+    public PotController Pot;
+
+    protected override void OnSceneLoad()
+    {
+        base.OnSceneLoad();
+
+        if (!Pot)
+            Pot = FindObjectOfType<PotController>();
+    }
+
     public override bool IsPlaying()
     {
         return CurrentState is GamePlay;
