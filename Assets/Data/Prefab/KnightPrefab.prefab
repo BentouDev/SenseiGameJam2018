@@ -409,6 +409,7 @@ GameObject:
   - component: {fileID: 2143573654777229530}
   - component: {fileID: 5807704220402602783}
   - component: {fileID: 4323070714973505433}
+  - component: {fileID: 2715274878421282009}
   - component: {fileID: 7125579175933565045}
   m_Layer: 10
   m_Name: KnightPrefab
@@ -664,6 +665,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fffa09605c353b4e8baf653499e3a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2715274878421282009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6980002679990725122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f266f377c5d9bb418ab0df3b4caeda8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StandingUpTime: 1.5
 --- !u!114 &7125579175933565045
 MonoBehaviour:
   m_ObjectHideFlags: 0
