@@ -9,4 +9,13 @@ public class MainGame : Game<MainGame>
     {
         return CurrentState is GamePlay;
     }
+
+    public void OnAIKilled(AIDriver driver)
+    {
+        var asPlay = CurrentState as GamePlay;
+        if (asPlay)
+        {
+            asPlay.OnAIKilled(driver);
+        }
+    }
 }
