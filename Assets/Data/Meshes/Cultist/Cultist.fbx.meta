@@ -25,10 +25,11 @@ ModelImporter:
     100038: pCube1
     100040: pDisc1
     100042: pDisc2
-    100044: R_Arm_1
-    100046: R_Arm_2
-    100048: R_Arm_3
-    100050: Root
+    100044: pSphere1
+    100046: R_Arm_1
+    100048: R_Arm_2
+    100050: R_Arm_3
+    100052: Root
     400000: animBot
     400002: animBot_Anim_Recovery_Scene_ID
     400004: Body
@@ -51,15 +52,17 @@ ModelImporter:
     400038: pCube1
     400040: pDisc1
     400042: pDisc2
-    400044: R_Arm_1
-    400046: R_Arm_2
-    400048: R_Arm_3
-    400050: Root
+    400044: pSphere1
+    400046: R_Arm_1
+    400048: R_Arm_2
+    400050: R_Arm_3
+    400052: Root
     2100000: lambert1
     4300000: Hood
     4300002: pDisc1
     4300004: pDisc2
     4300006: pCube1
+    4300008: pSphere1
     7400000: T-Pose
     7400002: Idle
     7400004: Run
@@ -83,14 +86,16 @@ ModelImporter:
     11400024: pCube1
     11400026: pDisc1
     11400028: pDisc2
-    11400030: R_Arm_1
-    11400032: R_Arm_2
-    11400034: R_Arm_3
-    11400036: Root
+    11400030: pSphere1
+    11400032: R_Arm_1
+    11400034: R_Arm_2
+    11400036: R_Arm_3
+    11400038: Root
     13700000: Hood
     13700002: pCube1
     13700004: pDisc1
     13700006: pDisc2
+    13700008: pSphere1
   externalObjects: {}
   materials:
     importMaterials: 1
