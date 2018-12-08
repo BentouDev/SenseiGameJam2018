@@ -60,6 +60,8 @@ public class AIDriver : Controller
     public void Kill()
     {
         DisableInput();
+        MainGame.Instance.OnAIKilled(this);
+        
         // MainGame.Instance.AIDirector.OnAIDestroyed(this);
 
         // Odpal animacje znikania

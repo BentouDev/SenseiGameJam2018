@@ -901,6 +901,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1453923190 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2145334424131793474, guid: aa2634949a45b4b4eb2c1a74d5711280,
+    type: 3}
+  m_PrefabInstance: {fileID: 5098044692776350261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cd34c867af52c4ca5dc95617fceeaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1570005691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1102,11 +1114,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CultistPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 4371084126131981113, guid: ff3ee3bbe151060409e526f53a4f99cf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1858585590451521037, guid: ff3ee3bbe151060409e526f53a4f99cf,
         type: 3}
@@ -1326,10 +1333,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1364492530, guid: d4570035230ee514681e81de49f57fcd, type: 3}
-      propertyPath: StartingEnemyCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1985043093, guid: d4570035230ee514681e81de49f57fcd, type: 3}
+      propertyPath: Pot
+      value: 
+      objectReference: {fileID: 1453923190}
+    - target: {fileID: 858735982, guid: d4570035230ee514681e81de49f57fcd, type: 3}
       propertyPath: PawnCamera
       value: 
       objectReference: {fileID: 5098044692711446652}

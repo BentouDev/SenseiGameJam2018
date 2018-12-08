@@ -1,11 +1,15 @@
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
+using Data.Scripts.Game;
 using Framework;
 using UnityEngine;
 
 public class GamePlay : GameState
 {
+    [Header("Cauldron")] 
+    public PotController Pot;
+    
     [Header("Wave")]
     [RequireValue]
     public EventScheduler Scheduler;
@@ -48,9 +52,12 @@ public class GamePlay : GameState
 
     protected override void OnTick()
     {
+        if (!Pot.IsAlive)
+            MainGame.Instance.SwitchState<GameLose>();
+
         if (InLimbo)
             return;
-        
+
         if (CurrentWaveEnemies.All(e => !e.IsAlive()))
         {
             StartCoroutine(EndWave());
@@ -64,7 +71,6 @@ public class GamePlay : GameState
             foreach (var enemy in CurrentWaveEnemies)
             {
                 MainGame.Instance.Controllers.Unregister(enemy.GetComponent<Controller>());
-                Destroy(enemy.gameObject);
             }
         
             CurrentWaveEnemies.Clear();
@@ -116,5 +122,16 @@ public class GamePlay : GameState
         if (Scheduler && Scheduler.Events.Any(e=>e.Name == WaveEndEvent))
             return ValidationResult.Ok;
         return new ValidationResult(ValidationStatus.Error, $"No event {WaveEndEvent} in scheduler!");
+    }
+
+    public void OnAIKilled(AIDriver driver)
+    {
+        MainGame.Instance.Controllers.Unregister(driver);
+        foreach (var collider in driver.GetComponentsInChildren<Collider>())
+        {
+            collider.enabled = false;
+        }
+
+        driver.GetComponent<DeadBody>().JustDied();
     }
 }
