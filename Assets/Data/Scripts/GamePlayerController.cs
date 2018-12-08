@@ -293,7 +293,13 @@ namespace Data.Scripts
             var startPos = TakenPawn.transform.position;
             while (Time.time - StartOfPositionBlend < PositionBlendTime)
             {
-                TakenPawn.transform.position = Vector3.Lerp(startPos, PointOfTaken.position + TakenOffset, (Time.time - StartOfPositionBlend) / Time.time - StartOfPositionBlend);
+                TakenPawn.transform.position = Vector3.Lerp
+                (
+                    startPos,
+                    PointOfTaken.TransformPoint(TakenOffset),
+                    (Time.time - StartOfPositionBlend) / PositionBlendTime
+                );
+
                 yield return null;
             }
 

@@ -3,7 +3,9 @@ using System.Collections;
 using System.Linq;
 using Data.Scripts.Game;
 using Framework;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GamePlay : GameState
 {
@@ -31,6 +33,13 @@ public class GamePlay : GameState
     public float WorldRadius = 20;
     public float SpawnHeight = 1.5f;
 
+    [Header("UI")] 
+    public TextMeshProUGUI WaveText;
+
+    public UnityEvent OnGameBegin;
+
+    public string WavePrefix = "Wave ";
+    
     private List<StatePawn> CurrentWaveEnemies = new List<StatePawn>();
     private bool InLimbo;
     
@@ -38,6 +47,8 @@ public class GamePlay : GameState
     {
         MainGame.Instance.Controllers.Init();
         MainGame.Instance.Controllers.Enable();
+        
+        OnGameBegin.Invoke();
 
         foreach (var ai in FindObjectsOfType<AIDriver>())
         {
@@ -95,6 +106,9 @@ public class GamePlay : GameState
 
     protected void StartWave()
     {
+        if (WaveText)
+            WaveText.text = WavePrefix + (CurrentWave + 1);
+        
         if (Scheduler)
             Scheduler.RaiseEvent(WaveStartEvent);
         

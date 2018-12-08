@@ -16,7 +16,7 @@ public class PotController : BaseBehaviour
 
     private float Lasthurt;
 
-    private List<BasePawn> Processing = new List<BasePawn>();
+    private List<Transform> Processing = new List<Transform>();
 
     private void Start()
     {
@@ -47,11 +47,12 @@ public class PotController : BaseBehaviour
 
     public void ThrowToPot(BasePawn pawn)
     {
-        if (Processing.Contains(pawn))
+        if (Processing.Contains(pawn.transform))
             return;
         
-        Processing.Add(pawn);
-        StartCoroutine(ProcessPotThrow(pawn));
+        Processing.Add(pawn.transform);
+        DoAnimate(pawn.transform);
+        // StartCoroutine(ProcessPotThrow(pawn));
     }
     
     IEnumerator ProcessPotThrow(BasePawn takenPawn)
@@ -60,15 +61,75 @@ public class PotController : BaseBehaviour
         var beginPos = takenPawn.transform.position;
         while (Time.time - beginTime < 0.5f)
         {
-            var newPos = Vector3.Lerp(beginPos, MainGame.Instance.Pot.transform.position, (Time.time - beginTime) / PotThrowDuration);
+            var newPos = Vector3.Lerp(beginPos, MainGame.Instance.Pot.transform.position, (Time.time - beginTime) / 0.5f);
 
             takenPawn.transform.position = newPos;
 
             yield return null;
         }
 
-        Processing.Remove(takenPawn);
+        Processing.Remove(takenPawn.transform);
         Destroy(takenPawn.gameObject);
         MainGame.Instance.Pot.Dmg.Heal(15);
     }
+
+    public void DoAnimate(Transform pawn = null)
+    {
+        if (!pawn)
+            return;
+        
+        StartCoroutine(CoAnimate(pawn));
+    }
+
+    private bool Animate;
+
+    IEnumerator CoAnimate(Transform pawn)
+    {
+        float startTime = Time.time;
+        // var force = transform.TransformDirection(ComputerForce(woozek, angle) * Power);
+        
+//        foreach (var coll in GetComponentsInChildren<Collider>())
+//        {
+//            Physics.IgnoreCollision(coll, MainGame.Instance.Player.Pawn.GetComponentInChildren<Collider>());            
+//        }
+
+        Vector3 zeroPos = pawn.position;
+
+        float Duration = Vector3.Distance(zeroPos, transform.position);
+        
+        Animate = true;
+        while (Animate && Time.time - startTime < Duration)
+        {
+//            Body.velocity = force;
+//            
+//            force = Vector3.Lerp(force, Vector3.zero, Time.fixedDeltaTime);
+//            force.y += Physics.gravity.y * Time.fixedDeltaTime;
+//            if (Mathf.Abs(force.magnitude) < 0.01f)
+//            {
+//                force = Vector3.zero;
+//            }
+
+            var coeff = (Time.time - startTime) / Duration;
+            var pos = Vector3.Lerp(zeroPos, transform.position, coeff);
+            zeroPos = pos;
+            pos.y += Mathf.Sin(0.5f + (Mathf.PI * coeff)) * 2;
+
+            pawn.transform.position = pos;
+            // Body.velocity = pos - transform.position; 
+
+            yield return null;
+        }
+
+        // Activator.Enabled = true;
+        
+        Processing.Remove(pawn);
+        Destroy(pawn.gameObject);
+        MainGame.Instance.Pot.Dmg.Heal(15);
+    }
+
+    public void StopAnim()
+    {
+        Animate = false;
+    }
+
 }
