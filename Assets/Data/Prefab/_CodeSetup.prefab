@@ -151,16 +151,21 @@ MonoBehaviour:
   MoveY: Move Y
   ReviveButton: Fire1
   TakeButton: Fire2
+  QueryMask:
+    serializedVersion: 2
+    m_Bits: 5120
   CultistPrefab: {fileID: 4371084126131981113, guid: ff3ee3bbe151060409e526f53a4f99cf,
     type: 3}
   ReviveRadius: 4
   TakeRadius: 4
   ReviveDuration: 5
-  QueryMask:
-    serializedVersion: 2
-    m_Bits: 5120
+  ThrowForce: 15
+  MaxPotThrowDistance: 7
+  PotThrowDuration: 2
+  PotHealAmount: 15
   CurrentTarget: {fileID: 0}
   RevivedPawn: {fileID: 0}
+  TakenPawn: {fileID: 0}
   CurrentState: 0
 --- !u!1 &8448132328904698395
 GameObject:
@@ -216,7 +221,7 @@ MonoBehaviour:
   WaveDelay: 2
   EnemyPrefab: {fileID: 6980002679990725122, guid: 8762b232d4b3f2a4ca076529f2615ea2,
     type: 3}
-  StartingEnemyCount: 1
+  StartingEnemyCount: 5
   EnemyCountCoefficient: 0.25
   WorldRadius: 30
   SpawnHeight: 1.5

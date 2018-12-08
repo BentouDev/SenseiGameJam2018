@@ -1,15 +1,41 @@
 fileFormatVersion: 2
-guid: c6c2b6168a429fc489ffc3c8f5a9b09e
+guid: 2ff9b9078b2794f4a900112f065c2032
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Book
-    11400000: //RootNode
+    100000: Body
+    100002: Cube
+    100004: //RootNode
+    100006: Hair
+    100008: Head
+    100010: pSphere15
+    400000: Body
+    400002: Cube
+    400004: //RootNode
+    400006: Hair
+    400008: Head
+    400010: pSphere15
+    2100000: Material
+    2100002: lambert1
+    2100004: DemonessBody
+    2100006: Hair
+    2300000: Body
+    2300002: Cube
+    2300004: Hair
+    2300006: Head
+    2300008: pSphere15
+    2300010: //RootNode
+    3300000: Body
+    3300002: Cube
+    3300004: Hair
+    3300006: Head
+    3300008: pSphere15
+    3300010: //RootNode
+    4300000: Cube
+    4300002: pSphere15
+    4300004: Body
+    4300006: Head
+    4300008: Hair
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,7 +67,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 15
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
