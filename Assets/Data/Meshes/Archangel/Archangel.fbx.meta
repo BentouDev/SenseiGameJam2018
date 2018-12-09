@@ -147,6 +147,11 @@ ModelImporter:
     100282: Weapon_2_Resp1
     100284: Weapon_2H
     100286: Weapons
+    100288: muddd
+    100290: pCube3
+    100292: pCylinder3
+    100294: polySurface1
+    100296: polySurface2
     400000: animBot
     400002: animBot_Anim_Recovery_Scene_ID
     400004: //RootNode
@@ -291,12 +296,27 @@ ModelImporter:
     400282: Weapon_2_Resp1
     400284: Weapon_2H
     400286: Weapons
+    400288: muddd
+    400290: pCube3
+    400292: pCylinder3
+    400294: polySurface1
+    400296: polySurface2
     2000000: back
     2000002: bottom
     2100000: lambert1
+    2100002: lambert2
+    2300000: muddd
+    2300002: pCube2
+    3300000: muddd
+    3300002: pCube2
     4300000: pCylinder1
     4300002: pCube1
     4300004: pCube2
+    4300006: muddd
+    4300008: polySurface1
+    4300010: polySurface2
+    4300012: pCube3
+    4300014: pCylinder3
     7400000: T-Pose
     7400002: Idle
     7400004: Fly
@@ -384,9 +404,18 @@ ModelImporter:
     11400152: Weapon_1
     11400154: Weapon_2
     11400156: Weapon_2H
+    11400158: muddd
+    11400160: pCube3
+    11400162: pCylinder3
+    11400164: polySurface1
+    11400166: polySurface2
     13700000: pCube1
     13700002: pCube2
     13700004: pCylinder1
+    13700006: pCube3
+    13700008: pCylinder3
+    13700010: polySurface1
+    13700012: polySurface2
   externalObjects: {}
   materials:
     importMaterials: 1
