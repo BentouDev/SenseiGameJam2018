@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: ae831ae74b101d9428e264bda0c3dc50
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: animBot
+    100002: animBot_Anim_Recovery_Scene_ID
+    100004: Body
+    100006: Body_CTL
+    100008: //RootNode
+    100010: Habit_1
+    100012: Habit_2
+    100014: Habit_3
+    100016: Head
+    100018: Hood
+    100020: joint1
+    100022: joint2
+    100024: L_Arm_1
+    100026: L_Arm_2
+    100028: L_Arm_3
+    100030: Main_CTL
+    100032: Neck
+    100034: Neck_CTL
+    100036: nurbsCircle1
+    100038: pCube1
+    100040: pDisc1
+    100042: pDisc2
+    100044: pSphere1
+    100046: R_Arm_1
+    100048: R_Arm_2
+    100050: R_Arm_3
+    100052: Root
+    400000: animBot
+    400002: animBot_Anim_Recovery_Scene_ID
+    400004: Body
+    400006: Body_CTL
+    400008: //RootNode
+    400010: Habit_1
+    400012: Habit_2
+    400014: Habit_3
+    400016: Head
+    400018: Hood
+    400020: joint1
+    400022: joint2
+    400024: L_Arm_1
+    400026: L_Arm_2
+    400028: L_Arm_3
+    400030: Main_CTL
+    400032: Neck
+    400034: Neck_CTL
+    400036: nurbsCircle1
+    400038: pCube1
+    400040: pDisc1
+    400042: pDisc2
+    400044: pSphere1
+    400046: R_Arm_1
+    400048: R_Arm_2
+    400050: R_Arm_3
+    400052: Root
+    2100000: lambert1
+    4300000: Hood
+    4300002: pDisc1
+    4300004: pDisc2
+    4300006: pCube1
+    4300008: pSphere1
+    7400000: T-Pose
+    7400002: Idle
+    7400004: Run
+    7400006: Attack
+    7400008: OnHit
+    7400010: Death
+    7400012: Revive
+    9500000: //RootNode
+    11400000: animBot
+    11400002: animBot_Anim_Recovery_Scene_ID
+    11400004: Body
+    11400006: Habit_3
+    11400008: Head
+    11400010: Hood
+    11400012: joint1
+    11400014: joint2
+    11400016: L_Arm_1
+    11400018: L_Arm_2
+    11400020: L_Arm_3
+    11400022: Neck
+    11400024: pCube1
+    11400026: pDisc1
+    11400028: pDisc2
+    11400030: pSphere1
+    11400032: R_Arm_1
+    11400034: R_Arm_2
+    11400036: R_Arm_3
+    11400038: Root
+    13700000: Hood
+    13700002: pCube1
+    13700004: pDisc1
+    13700006: pDisc2
+    13700008: pSphere1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
