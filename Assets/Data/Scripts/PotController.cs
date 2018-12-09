@@ -123,6 +123,7 @@ public class PotController : BaseBehaviour
             {
                 spawned = true;
                 Instantiate(effectPrefab, transform.position, Quaternion.identity);
+                MainGame.Instance.Pot.Dmg.Heal(15);
             }
 
             var curveValue = curveInstance.Evaluate(coeff);
@@ -138,7 +139,6 @@ public class PotController : BaseBehaviour
         
         Processing.Remove(pawn);
         Destroy(pawn.gameObject);
-        MainGame.Instance.Pot.Dmg.Heal(15);
     }
 
     public void StopAnim()

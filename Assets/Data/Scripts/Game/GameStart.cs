@@ -24,10 +24,7 @@ public class GameStart : GameState, ILevelDependable
 
     protected override void OnTick()
     {
-        if (Input.anyKey)
-        {
-            MainGame.Instance.SwitchState<GamePlay>();
-        }
+        MainGame.Instance.SwitchState<GamePlay>();
     }
 
     public void OnLevelCleanUp()
