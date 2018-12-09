@@ -23,7 +23,11 @@ namespace Data.Scripts
                     }
                 }
 
-            return PointOfTaken;
+            var target = new GameObject("_RealPoint_");
+            target.transform.SetParent(PointOfTaken);
+            target.transform.localPosition = Offset;
+
+            return target.transform;
         }
     }
 }

@@ -228,7 +228,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a0dda3d081e0f409e86469f4483bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnAnimEvent:
+  OnDoThrow:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnEndPullUp:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -376,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PointOfTaken: {fileID: 0}
   SlotName: TakenSlot
-  Offset: {x: 0, y: 1.4, z: 1}
+  Offset: {x: 0, y: 0.5, z: 0.25}
 --- !u!1001 &8302253497611909139
 PrefabInstance:
   m_ObjectHideFlags: 0

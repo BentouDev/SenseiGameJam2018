@@ -151,6 +151,11 @@ namespace Data.Scripts
             CurrentState = State.Revive;
             
             foreach (var collider in Physics.OverlapSphere(Pawn.transform.position, ReviveRadius, QueryMask, QueryTriggerInteraction.Collide)
+                .Where(p =>
+                {
+                    var dir = p.transform.position - Pawn.transform.position;
+                    return Vector3.Dot(dir.normalized, Pawn.transform.forward) > 0.5f;
+                })
                 .OrderBy(p => Vector3.Distance(p.transform.position, Pawn.transform.position)))
             {
                 var pawn = collider.GetComponentInParent<BasePawn>();
@@ -254,6 +259,11 @@ namespace Data.Scripts
                 return;
             
             foreach (var collider in Physics.OverlapSphere(Pawn.transform.position, ReviveRadius, QueryMask, QueryTriggerInteraction.Collide)
+                .Where(p =>
+                {
+                    var dir = p.transform.position - Pawn.transform.position;
+                    return Vector3.Dot(dir.normalized, Pawn.transform.forward) > 0.5f;
+                })
                 .OrderBy(p => Vector3.Distance(p.transform.position, Pawn.transform.position)))
             {
                 var pawn = collider.GetComponentInParent<BasePawn>();
@@ -269,6 +279,7 @@ namespace Data.Scripts
                 CanThrow = false;
 
                 var driver = TakenPawn.GetComponent<AIDriver>();
+                TakenPawn.GetComponent<DeadBody>().OnPickup();
                 
                 // pull the plug
                 driver.DisableInput();
@@ -293,10 +304,11 @@ namespace Data.Scripts
             var startPos = TakenPawn.transform.position;
             while (Time.time - StartOfPositionBlend < PositionBlendTime)
             {
+                var target = PointOfTaken.position;
                 TakenPawn.transform.position = Vector3.Lerp
                 (
                     startPos,
-                    PointOfTaken.TransformPoint(TakenOffset),
+                    target,
                     (Time.time - StartOfPositionBlend) / PositionBlendTime
                 );
 
@@ -304,7 +316,7 @@ namespace Data.Scripts
             }
 
             TakenPawn.transform.SetParent(PointOfTaken);
-            TakenPawn.transform.localPosition = TakenOffset;
+            TakenPawn.transform.localPosition = Vector3.zero;
         }
 
         IEnumerator AnimateLayer(float from, float to)

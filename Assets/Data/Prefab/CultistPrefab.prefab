@@ -123,7 +123,18 @@ MonoBehaviour:
   Dmg: 1
   OnAttack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4259504911133223705}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OnAttack
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &4371084126131981113
@@ -137,6 +148,7 @@ GameObject:
   - component: {fileID: 1858585590451521037}
   - component: {fileID: 5420668768835471520}
   - component: {fileID: 8880196071261601961}
+  - component: {fileID: 4259504911133223705}
   - component: {fileID: 1176480057823302595}
   - component: {fileID: 7805673899120725570}
   - component: {fileID: 2299352296983368284}
@@ -206,11 +218,14 @@ MonoBehaviour:
   MaxHealth: 10
   StartingHealth: 10
   Delay: 1
+  Anim: {fileID: 4259504911133223705}
+  OnHit: OnHit
+  OnDed: OnDeath
   DeathAnim:
     IsPlaying: 0
     ForceStopOnEnd: 0
     StopBeforePlay: 0
-    Animator: {fileID: 0}
+    Animator: {fileID: 4259504911133223705}
     Animation: 
     StopState: 
     Duration: 0
@@ -224,6 +239,25 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
+--- !u!95 &4259504911133223705
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371084126131981113}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ae831ae74b101d9428e264bda0c3dc50, type: 3}
+  m_Controller: {fileID: 9100000, guid: 390b6f1d9abc5a645bb4f6e75ac5e16b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1176480057823302595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,8 +306,8 @@ MonoBehaviour:
   CurrentDirection: {x: 0, y: 0, z: 0}
   Animation:
     MovementBlend: Forward
-    AirBoolean: InAir
-    MoveBoolean: 
+    AirBoolean: 
+    MoveBoolean: IsMoving
   AllStates: []
   CircleDirection: {x: 0, y: 0, z: 0}
   Damping: {x: 0, y: 0, z: 0}
@@ -627,6 +661,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: ae831ae74b101d9428e264bda0c3dc50, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 834607e9e21ef0c4daa286bfaa7ec3c7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae831ae74b101d9428e264bda0c3dc50, type: 3}
 --- !u!4 &5169552337156232862 stripped

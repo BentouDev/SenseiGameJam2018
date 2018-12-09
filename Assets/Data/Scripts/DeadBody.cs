@@ -21,6 +21,15 @@ public class DeadBody : BaseBehaviour
         DeadTrigger.enabled = true;
     }
 
+    public void OnPickup()
+    {
+        // Ensure calmness
+        Driver.Pawn.Body.freezeRotation = true;
+        Driver.Pawn.Body.useGravity = false;
+        Driver.Pawn.ResetBody();
+        Driver.Pawn.transform.rotation = Quaternion.identity;
+    }
+
     public void Throw(Vector3 power)
     {
         if (!Driver)

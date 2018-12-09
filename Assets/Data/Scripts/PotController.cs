@@ -93,11 +93,16 @@ public class PotController : BaseBehaviour
 //            Physics.IgnoreCollision(coll, MainGame.Instance.Player.Pawn.GetComponentInChildren<Collider>());            
 //        }
 
+        var curveInstance = MainGame.Instance.GlobalVars.GetValue<AnimationCurve>("Curve");
+        var effectPrefab = MainGame.Instance.GlobalVars.GetValue<GameObject>("CauldronEffect");
+
         Vector3 zeroPos = pawn.position;
+        Vector3 oldScale = pawn.transform.localScale;
 
         float Duration = Vector3.Distance(zeroPos, transform.position);
         
         Animate = true;
+        bool spawned = false;
         while (Animate && Time.time - startTime < Duration)
         {
 //            Body.velocity = force;
@@ -114,7 +119,16 @@ public class PotController : BaseBehaviour
             zeroPos = pos;
             pos.y += Mathf.Sin(0.5f + (Mathf.PI * coeff)) * 2;
 
+            if (!spawned && coeff > 0.75f)
+            {
+                spawned = true;
+                Instantiate(effectPrefab, transform.position, Quaternion.identity);
+            }
+
+            var curveValue = curveInstance.Evaluate(coeff);
+            
             pawn.transform.position = pos;
+            pawn.transform.localScale = Vector3.Lerp(oldScale, Vector3.zero, curveValue);
             // Body.velocity = pos - transform.position; 
 
             yield return null;
