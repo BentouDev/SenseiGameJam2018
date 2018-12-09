@@ -256,6 +256,16 @@ MonoBehaviour:
   Anim: {fileID: 0}
   OnHit: 
   OnDed: 
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnGotHit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   DeathAnim:
     IsPlaying: 0
     ForceStopOnEnd: 0
@@ -712,6 +722,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5389267585399163832, guid: a568be6997c0f4a19ad04f818df88299,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.783
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a568be6997c0f4a19ad04f818df88299, type: 3}
 --- !u!4 &2097038505476143478 stripped
@@ -1020,6 +1035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640288309037566316, guid: 30932c0e6f50b48348ac7b3d4e35e633,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.783
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30932c0e6f50b48348ac7b3d4e35e633, type: 3}

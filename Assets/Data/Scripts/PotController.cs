@@ -101,6 +101,7 @@ public class PotController : BaseBehaviour
             var hack = GameObject.FindWithTag("Curve");
             var curveInstance = hack.GetComponent<CurveContainer>().Curve;
             var effectPrefab = hack.GetComponent<CurveContainer>().Object;
+            var onPot = hack.GetComponent<CurveContainer>().OnPot;
         //}
 
         Vector3 zeroPos = pawn.position;
@@ -131,6 +132,7 @@ public class PotController : BaseBehaviour
                 spawned = true;
                 Instantiate(effectPrefab, transform.position, Quaternion.identity);
                 MainGame.Instance.Pot.Dmg.Heal(15);
+                onPot.Invoke();
             }
 
             var curveValue = curveInstance.Evaluate(coeff);
