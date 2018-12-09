@@ -92,16 +92,16 @@ public class PotController : BaseBehaviour
 //        {
 //            Physics.IgnoreCollision(coll, MainGame.Instance.Player.Pawn.GetComponentInChildren<Collider>());            
 //        }
+//
+//        AnimationCurve curveInstance = MainGame.Instance.GlobalVars.GetValue<AnimationCurve>("Curve");
+//        var effectPrefab = MainGame.Instance.GlobalVars.GetValue<GameObject>("CauldronEffect");
 
-        var curveInstance = MainGame.Instance.GlobalVars.GetValue<AnimationCurve>("Curve");
-        var effectPrefab = MainGame.Instance.GlobalVars.GetValue<GameObject>("CauldronEffect");
-
-        if (!effectPrefab)
-        {
+        // if (!effectPrefab)
+        //{
             var hack = GameObject.FindWithTag("Curve");
-            curveInstance = hack.GetComponent<CurveContainer>().Curve;
-            effectPrefab = hack.GetComponent<CurveContainer>().Object;
-        }
+            var curveInstance = hack.GetComponent<CurveContainer>().Curve;
+            var effectPrefab = hack.GetComponent<CurveContainer>().Object;
+        //}
 
         Vector3 zeroPos = pawn.position;
         Vector3 oldScale = pawn.transform.localScale;

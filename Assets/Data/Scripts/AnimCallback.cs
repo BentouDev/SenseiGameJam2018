@@ -7,6 +7,7 @@ public class AnimCallback : MonoBehaviour
 {
     public UnityEvent OnDoThrow;
     public UnityEvent OnEndPullUp;
+    public UnityEvent OnPlayStep;
     
     void DoThrow(string wtf)
     {
@@ -16,5 +17,10 @@ public class AnimCallback : MonoBehaviour
     void EndPullUp(string non)
     {
         OnEndPullUp.Invoke();
+    }
+
+    void PlayStep(string ndua)
+    {
+        OnPlayStep.Invoke();
     }
 }

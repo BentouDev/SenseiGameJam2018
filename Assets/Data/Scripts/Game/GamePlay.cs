@@ -34,7 +34,7 @@ public class GamePlay : GameState
     public float SpawnHeight = 1.5f;
 
     [Header("UI")] 
-    public TextMeshProUGUI WaveText;
+    public List<TextMeshProUGUI> WaveText = new List<TextMeshProUGUI>();
 
     public UnityEvent OnGameBegin;
 
@@ -106,8 +106,10 @@ public class GamePlay : GameState
 
     protected void StartWave()
     {
-        if (WaveText)
-            WaveText.text = WavePrefix + (CurrentWave + 1);
+        foreach (var proUgui in WaveText)
+        {
+            proUgui.text = WavePrefix + (CurrentWave + 1);
+        }
         
         if (Scheduler)
             Scheduler.RaiseEvent(WaveStartEvent);
