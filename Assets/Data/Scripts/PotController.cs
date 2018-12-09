@@ -96,6 +96,13 @@ public class PotController : BaseBehaviour
         var curveInstance = MainGame.Instance.GlobalVars.GetValue<AnimationCurve>("Curve");
         var effectPrefab = MainGame.Instance.GlobalVars.GetValue<GameObject>("CauldronEffect");
 
+        if (!effectPrefab)
+        {
+            var hack = GameObject.FindWithTag("Curve");
+            curveInstance = hack.GetComponent<CurveContainer>().Curve;
+            effectPrefab = hack.GetComponent<CurveContainer>().Object;
+        }
+
         Vector3 zeroPos = pawn.position;
         Vector3 oldScale = pawn.transform.localScale;
 

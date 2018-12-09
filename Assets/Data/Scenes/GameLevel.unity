@@ -113,6 +113,92 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 0db144897a388224081cef5dce16bd03, type: 2}
+--- !u!1 &38565575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 38565577}
+  - component: {fileID: 38565576}
+  m_Layer: 0
+  m_Name: MyCurve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &38565576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38565575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b5e25ba05c62345a44194c97af8276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.61050326
+      value: 0.06262132
+      inSlope: 0.067713894
+      outSlope: 0.067713894
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.44301948
+    - serializedVersion: 3
+      time: 0.79086787
+      value: 0.5097593
+      inSlope: 3.2355442
+      outSlope: 3.2355442
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.21580145
+      outWeight: 0.15446316
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Object: {fileID: 2353901418987826809, guid: 8be8402402b204c54b6fba343131878b, type: 3}
+--- !u!4 &38565577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38565575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.904842, y: 2.0922241, z: 5.3091593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &45044616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1858585590451521037, guid: ff3ee3bbe151060409e526f53a4f99cf,
@@ -660,7 +746,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2938
+  m_Name: pb_Mesh-36254
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -916,7 +1002,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2944
+  m_Name: pb_Mesh-36260
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2540,7 +2626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1364492530, guid: d4570035230ee514681e81de49f57fcd, type: 3}
       propertyPath: StartingEnemyCount
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 858735982, guid: d4570035230ee514681e81de49f57fcd, type: 3}
       propertyPath: PawnCamera

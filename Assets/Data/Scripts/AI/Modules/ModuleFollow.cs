@@ -30,7 +30,7 @@ public class ModuleFollow : AIModule
 
     private NavMeshPath Path;
     private int PathProgress;
-    private float LastThinkingTime;
+    private float LastThinkingTime = 0;
     
     public void OnDrawGizmosSelected()
     {
@@ -78,6 +78,9 @@ public class ModuleFollow : AIModule
         ObtainDestination();
 
         if (!Destination)
+            return 0;
+
+        if (Time.time - LastThinkingTime < ThinkLag)
             return 0;
         
         var diff = Destination.transform.position - Pawn.transform.position;
@@ -176,9 +179,16 @@ public class ModuleFollow : AIModule
             direction = -diff.normalized;
 
             Debug.DrawRay(transform.position, -diff.normalized, Color.red);
-            
+
             if (Interruptable)
-                Driver.SwitchToBestModule();
+            {
+                var module = Driver.PickBestModule();
+                if (!(module is ModuleIdle) && module != this)
+                {
+                    Driver.SwitchModule(module);
+                }
+                
+            }
         }
 
         return direction;
