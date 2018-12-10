@@ -7,15 +7,11 @@ public class PotController : BaseBehaviour
 {
     public Damageable Dmg;
     public float DelayFromDmg = 1;
-    
-    [Header("Pot data")]
-    public float PotThrowDuration = 0.5f;
-    public int PotHealAmount = 15;
-
-    public bool IsAlive => Dmg && Dmg.IsAlive;
 
     private float Lasthurt;
-
+    
+    public bool IsAlive => Dmg && Dmg.IsAlive;
+    
     private List<Transform> Processing = new List<Transform>();
 
     private void Start()
@@ -38,10 +34,12 @@ public class PotController : BaseBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var dead = other.GetComponentInChildren<DeadBody>();
-        if (dead)
+        var dead = other.GetComponentInParent<DeadBody>();
+        if (dead && dead.WasThrown)
         {
-            ThrowToPot(dead.GetComponent<BasePawn>());
+            var pawn = dead.GetComponent<BasePawn>();
+            if (!pawn.IsAlive())
+                ThrowToPot(pawn);
         }
     }
 
@@ -52,27 +50,8 @@ public class PotController : BaseBehaviour
         
         Processing.Add(pawn.transform);
         DoAnimate(pawn.transform);
-        // StartCoroutine(ProcessPotThrow(pawn));
     }
     
-    IEnumerator ProcessPotThrow(BasePawn takenPawn)
-    {
-        float beginTime = Time.time;
-        var beginPos = takenPawn.transform.position;
-        while (Time.time - beginTime < 0.5f)
-        {
-            var newPos = Vector3.Lerp(beginPos, MainGame.Instance.Pot.transform.position, (Time.time - beginTime) / 0.5f);
-
-            takenPawn.transform.position = newPos;
-
-            yield return null;
-        }
-
-        Processing.Remove(takenPawn.transform);
-        Destroy(takenPawn.gameObject);
-        MainGame.Instance.Pot.Dmg.Heal(15);
-    }
-
     public void DoAnimate(Transform pawn = null)
     {
         if (!pawn)
@@ -82,27 +61,22 @@ public class PotController : BaseBehaviour
     }
 
     private bool Animate;
+    private CurveContainer Provider;
 
     IEnumerator CoAnimate(Transform pawn)
     {
         float startTime = Time.time;
-        // var force = transform.TransformDirection(ComputerForce(woozek, angle) * Power);
-        
-//        foreach (var coll in GetComponentsInChildren<Collider>())
-//        {
-//            Physics.IgnoreCollision(coll, MainGame.Instance.Player.Pawn.GetComponentInChildren<Collider>());            
-//        }
-//
-//        AnimationCurve curveInstance = MainGame.Instance.GlobalVars.GetValue<AnimationCurve>("Curve");
-//        var effectPrefab = MainGame.Instance.GlobalVars.GetValue<GameObject>("CauldronEffect");
 
-        // if (!effectPrefab)
-        //{
-            var hack = GameObject.FindWithTag("Curve");
-            var curveInstance = hack.GetComponent<CurveContainer>().Curve;
-            var effectPrefab = hack.GetComponent<CurveContainer>().Object;
-            var onPot = hack.GetComponent<CurveContainer>().OnPot;
-        //}
+        if (!Provider)
+        {
+            var go = GameObject.FindWithTag("Curve");
+            Provider = go.GetComponent<CurveContainer>();
+        }
+
+        var scaleCurve = Provider.ScaleCurve;
+        var posCurve = Provider.PosCurve;
+        var effectPrefab = Provider.Object;
+        var onPot = Provider.OnPot;
 
         Vector3 zeroPos = pawn.position;
         Vector3 oldScale = pawn.transform.localScale;
@@ -111,40 +85,40 @@ public class PotController : BaseBehaviour
         
         Animate = true;
         bool spawned = false;
+        bool animated = false;
         while (Animate && Time.time - startTime < Duration)
         {
-//            Body.velocity = force;
-//            
-//            force = Vector3.Lerp(force, Vector3.zero, Time.fixedDeltaTime);
-//            force.y += Physics.gravity.y * Time.fixedDeltaTime;
-//            if (Mathf.Abs(force.magnitude) < 0.01f)
-//            {
-//                force = Vector3.zero;
-//            }
-
             var coeff = (Time.time - startTime) / Duration;
             var pos = Vector3.Lerp(zeroPos, transform.position, coeff);
             zeroPos = pos;
-            pos.y += Mathf.Sin(0.5f + (Mathf.PI * coeff)) * 2;
+            
+            // pos.y += Mathf.Sin(0.75f + (Mathf.PI * coeff)) * 3;
 
-            if (!spawned && coeff > 0.75f)
+            if (!animated && coeff > Provider.AnimPlayThreshold)
+            {
+                animated = true;
+                Provider.Anim.SetTrigger(Provider.Trigger);
+            }
+
+            if (!spawned && coeff > Provider.HealPlayThreshold)
             {
                 spawned = true;
+
                 Instantiate(effectPrefab, transform.position, Quaternion.identity);
                 MainGame.Instance.Pot.Dmg.Heal(15);
                 onPot.Invoke();
             }
 
-            var curveValue = curveInstance.Evaluate(coeff);
-            
+            var scaleValue = scaleCurve.Evaluate(coeff);
+            var posValue = posCurve.Evaluate(coeff);
+
+            pos.y = zeroPos.y + posValue; 
+
             pawn.transform.position = pos;
-            pawn.transform.localScale = Vector3.Lerp(oldScale, Vector3.zero, curveValue);
-            // Body.velocity = pos - transform.position; 
+            pawn.transform.localScale = Vector3.Lerp(oldScale, Vector3.zero, scaleValue);
 
             yield return null;
         }
-
-        // Activator.Enabled = true;
         
         Processing.Remove(pawn);
         Destroy(pawn.gameObject);
@@ -154,5 +128,4 @@ public class PotController : BaseBehaviour
     {
         Animate = false;
     }
-
 }

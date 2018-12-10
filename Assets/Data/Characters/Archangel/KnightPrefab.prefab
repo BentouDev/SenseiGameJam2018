@@ -154,7 +154,8 @@ MonoBehaviour:
   TargetClassToFind: 0
   OnDestinationReached: {fileID: 6633725039793294424}
   TriggerRange: 100
-  MaxPriority: 15
+  MaxPriority: 100
+  BasePriority: 15
   ThinkLag: 0.5
   CornerProximity: 0.25
   Interruptable: 1
@@ -179,7 +180,8 @@ MonoBehaviour:
   TargetClassToFind: 2
   OnDestinationReached: {fileID: 6633725039793294424}
   TriggerRange: 15
-  MaxPriority: 30
+  MaxPriority: 100
+  BasePriority: 30
   ThinkLag: 0.5
   CornerProximity: 0.25
   Interruptable: 1
@@ -199,15 +201,16 @@ MonoBehaviour:
   DrawDebug: 0
   Destination: {fileID: 0}
   TargetTag: Player
-  DestinationThreshold: 2
+  DestinationThreshold: 0.75
   Checkpoint: {x: 0, y: 0, z: 0}
   TargetClassToFind: 0
   OnDestinationReached: {fileID: 6633725039793294424}
-  TriggerRange: 3
-  MaxPriority: 45
+  TriggerRange: 2
+  MaxPriority: 100
+  BasePriority: 45
   ThinkLag: 0.5
   CornerProximity: 0.25
-  Interruptable: 0
+  Interruptable: 1
 --- !u!114 &6633725039793294424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +231,8 @@ MonoBehaviour:
     Mask:
       serializedVersion: 2
       m_Bits: 2049
+  FaceEnemyOnBegin: 1
+  FaceEnemyOnUpdate: 0
   AbilityToUse: {fileID: 8178929078745897946}
   NextModule: {fileID: 7956355533679375140}
   ShuffleIfPossible: 0
@@ -319,7 +324,7 @@ Transform:
   - {fileID: 7026380796935474602}
   - {fileID: 1341308870449888396}
   m_Father: {fileID: 8199051999658669473}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8328175211046460916
 MonoBehaviour:
@@ -340,6 +345,50 @@ MonoBehaviour:
   - {fileID: 6149049843578339987}
   - {fileID: 6895020605044324113}
   - {fileID: 7280810349094396798}
+--- !u!1 &5557880239458929998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5556329514294156483}
+  - component: {fileID: 7750778195380636981}
+  m_Layer: 10
+  m_Name: DeadTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5556329514294156483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557880239458929998}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8199051999658669473}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7750778195380636981
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557880239458929998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 1.25
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5680546873346281535
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,11 +520,11 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6379416965348162368}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.5
+  m_Center: {x: 0, y: -0.6, z: 0}
 --- !u!1 &6980002679990725122
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +571,7 @@ Transform:
   - {fileID: 65705018624533112}
   - {fileID: 7459046225181711368}
   - {fileID: 265804532636639188}
+  - {fileID: 5556329514294156483}
   - {fileID: 2176250691509598028}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -541,7 +591,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 2
   m_Constraints: 112
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!114 &8519010371927721944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,7 +608,7 @@ MonoBehaviour:
   Invincible: 0
   MaxHealth: 5
   StartingHealth: 5
-  Delay: 1
+  Delay: 0.5
   Anim: {fileID: 797735140052049852}
   OnHit: OnHit
   OnDed: OnDeath
@@ -837,7 +887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b359b15877944c8aaaa88b19593f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeadTrigger: {fileID: 5681742162024580546}
+  DeadCollider: {fileID: 5681742162024580546}
+  DeadTrigger: {fileID: 7750778195380636981}
   Driver: {fileID: 0}
   Mask:
     serializedVersion: 2
@@ -982,7 +1033,7 @@ PrefabInstance:
     - target: {fileID: 6086935064053369298, guid: a0d5d11f35f0b40afbef5f89af9c3bb7,
         type: 3}
       propertyPath: MaxDistance
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6086935064053369298, guid: a0d5d11f35f0b40afbef5f89af9c3bb7,
         type: 3}
@@ -1073,7 +1124,7 @@ PrefabInstance:
     - target: {fileID: 4629382640811851539, guid: 39a55325a7d5d4789bf2790bcf1e3f7b,
         type: 3}
       propertyPath: MaxDistance
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4629382640811851539, guid: 39a55325a7d5d4789bf2790bcf1e3f7b,
         type: 3}
@@ -1164,7 +1215,7 @@ PrefabInstance:
     - target: {fileID: 7212682880655157568, guid: a0a570d57f5d142deab9ee918d28ec29,
         type: 3}
       propertyPath: MaxDistance
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7212682880655157568, guid: a0a570d57f5d142deab9ee918d28ec29,
         type: 3}
@@ -1243,7 +1294,7 @@ PrefabInstance:
     - target: {fileID: 13700012, guid: 5368b64ac1c80204ead7ff1f7b9b9ac3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1a4053438e4e1d744aba417dbec0fbcc, type: 2}
+      objectReference: {fileID: 2100000, guid: e08dd1f79a792424f8ce5eb85061d47a, type: 2}
     - target: {fileID: 13700008, guid: 5368b64ac1c80204ead7ff1f7b9b9ac3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1334,7 +1385,7 @@ PrefabInstance:
     - target: {fileID: 6568242245258859611, guid: c48841a7660cf499dbb5c250c6bddf0e,
         type: 3}
       propertyPath: MaxDistance
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6568242245258859611, guid: c48841a7660cf499dbb5c250c6bddf0e,
         type: 3}
@@ -1343,12 +1394,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c48841a7660cf499dbb5c250c6bddf0e, type: 3}
---- !u!4 &1341308870449888396 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6568242245258859610, guid: c48841a7660cf499dbb5c250c6bddf0e,
-    type: 3}
-  m_PrefabInstance: {fileID: 5312660733197068502}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1341308870449888386 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6568242245258859604, guid: c48841a7660cf499dbb5c250c6bddf0e,
@@ -1361,6 +1406,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d82931ec72f14457b87146b71db156f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1341308870449888396 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6568242245258859610, guid: c48841a7660cf499dbb5c250c6bddf0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5312660733197068502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6560602488151020149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1431,7 +1482,7 @@ PrefabInstance:
     - target: {fileID: 4467943959729762571, guid: 57e4a78a36d2a4a20b3d4a538f682b22,
         type: 3}
       propertyPath: MaxDistance
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4467943959729762571, guid: 57e4a78a36d2a4a20b3d4a538f682b22,
         type: 3}
@@ -1522,7 +1573,7 @@ PrefabInstance:
     - target: {fileID: 4559741390725530232, guid: f40dc22d58ef14dcab767b6ec85cc602,
         type: 3}
       propertyPath: MaxDistance
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4559741390725530232, guid: f40dc22d58ef14dcab767b6ec85cc602,
         type: 3}

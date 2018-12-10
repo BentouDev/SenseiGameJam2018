@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Data.Scripts.AI.Modules;
 using Framework;
 using UnityEngine;
@@ -23,6 +25,9 @@ public class ModuleFollow : AIModule
     [Range(0, 100)]
     public float MaxPriority = 100;
 
+    [Range(0, 100)]
+    public float BasePriority = 100;
+
     public float ThinkLag = 0.5f;
     public float CornerProximity = 0.25f;
 
@@ -45,26 +50,27 @@ public class ModuleFollow : AIModule
 
     void ObtainDestination()
     {
+        if (Destination)
+            return;
+
         // Find one yourself
         if (Destination == null && !string.IsNullOrEmpty(TargetTag))
         {
             var go = GameObject.FindGameObjectWithTag(TargetTag);
-            Destination = go != null ? go.transform : null;
+            Destination = go ? go.transform : null;
         }
 
-        if (Destination == null)
+        foreach (var target in FindObjectsOfType<DestinationTarget>()
+            .OrderBy(p => Vector3.Distance(Driver.Pawn.transform.position, p.transform.position)))
         {
-            foreach (var target in FindObjectsOfType<DestinationTarget>())
+            var pawn = target.GetComponent<BasePawn>();
+            if (pawn && !pawn.IsAlive())
+                continue;
+
+            if (target.Class == TargetClassToFind)
             {
-                var pawn = target.GetComponent<BasePawn>();
-                if (pawn && !pawn.IsAlive())
-                    continue;
-                
-                if (target.Class == TargetClassToFind)
-                {
-                    Destination = target.transform;
-                    break;
-                }
+                Destination = target.transform;
+                break;
             }
         }
 
@@ -85,8 +91,10 @@ public class ModuleFollow : AIModule
         
         var diff = Destination.transform.position - Pawn.transform.position;
         if (diff.magnitude < TriggerRange && !HasReachedDestination())
-            return MaxPriority;
+            return BasePriority + Mathf.Lerp(0, MaxPriority - BasePriority, (TriggerRange - (diff.magnitude - DestinationThreshold)) / TriggerRange);
 
+        Destination = null;
+        
         return 0;
     }
 

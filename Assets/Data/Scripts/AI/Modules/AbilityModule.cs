@@ -28,6 +28,9 @@ public class AbilityModule : AIModule
     public List<CollisionInfo> Collision;
 
     [Header("System")]
+    public bool FaceEnemyOnBegin;
+    public bool FaceEnemyOnUpdate;
+
     public Ability AbilityToUse;
     public AIModule NextModule;
     public bool ShuffleIfPossible;
@@ -37,6 +40,12 @@ public class AbilityModule : AIModule
     protected override void OnBegin()
     {
         Used = false;
+
+        if (FaceEnemyOnBegin)
+        {
+            var dir = Driver.CurrentEnemy.transform.position - Driver.Pawn.transform.position;
+            Driver.Pawn.LockFaceDirection(dir.normalized);
+        }
     }
 
     public static void DrawCollider(CollisionInfo info, Transform transform, BasePawn pawn = null)
@@ -55,6 +64,12 @@ public class AbilityModule : AIModule
 
     protected override Vector3 OnProcessMovement()
     {
+        if (FaceEnemyOnUpdate)
+        {
+            var dir = Driver.CurrentEnemy.transform.position - Driver.Pawn.transform.position;
+            Driver.Pawn.LockFaceDirection(dir.normalized);
+        }
+        
         if (!Used)
         {
             Used = true;
@@ -65,6 +80,14 @@ public class AbilityModule : AIModule
         Driver.SwitchModule(NextModule != null ? NextModule : (ShuffleIfPossible ? Driver.PickShuffleModule() : Driver.PickBestModule()));
 
         return base.OnProcessMovement();
+    }
+
+    protected override void OnEnd()
+    {
+        if (FaceEnemyOnBegin || FaceEnemyOnUpdate)
+        {
+            Driver.Pawn.UnlockFaceDirection();
+        }
     }
 
     void OnDrawGizmosSelected()

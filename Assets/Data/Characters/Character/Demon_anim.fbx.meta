@@ -646,7 +646,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.74327606
+      - time: 0.6262548
         functionName: EndPullUp
         data: EndPullUp
         objectReferenceParameter: {instanceID: 0}
@@ -684,6 +684,13 @@ ModelImporter:
       - time: 0.50000024
         functionName: DoThrow
         data: DoThrow
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.92828673
+        functionName: EndThrow
+        data: xd
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0

@@ -11,6 +11,12 @@ public class ModuleIdle : AIModule
 
     protected override Vector3 OnProcessMovement()
     {
+        if (Driver.CurrentEnemy)
+        {
+            var dir = Driver.CurrentEnemy.transform.position - Driver.Pawn.transform.position;
+            Driver.Pawn.LockFaceDirection(dir.normalized);
+        }
+        
         var best = Driver.PickShuffleModule() ?? Driver.PickBestModule();
         if (best != null && best != this)
         {
@@ -18,5 +24,10 @@ public class ModuleIdle : AIModule
         }
 
         return Vector3.zero;
+    }
+
+    protected override void OnEnd()
+    {
+        Driver.Pawn.UnlockFaceDirection();
     }
 }

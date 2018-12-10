@@ -61,10 +61,24 @@ public class GamePlay : GameState
     protected override void OnEnd()
     {
         MainGame.Instance.Controllers.Disable();
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     protected override void OnTick()
     {
+        if (Application.isFocused)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;            
+        }
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;            
+        }
+
         if (!Pot.IsAlive)
             MainGame.Instance.SwitchState<GameLose>();
         

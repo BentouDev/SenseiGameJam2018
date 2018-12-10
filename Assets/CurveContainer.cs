@@ -5,20 +5,16 @@ using UnityEngine.Events;
 
 public class CurveContainer : MonoBehaviour
 {
-    public AnimationCurve Curve;
+    public AnimationCurve ScaleCurve;
+    public AnimationCurve PosCurve;
 
     public GameObject Object;
 
     public UnityEvent OnPot;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Animator Anim;
+    public string Trigger;
+    
+    public float AnimPlayThreshold = 0.4f;
+    public float HealPlayThreshold = 0.5f;
 }

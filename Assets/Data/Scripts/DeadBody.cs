@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using Framework;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DeadBody : BaseBehaviour
 {
+    public Collider DeadCollider;
     public Collider DeadTrigger;
     public AIDriver Driver;
     public LayerMask Mask;
     public float RagdollDelay = 3;
 
+    public bool WasThrown { get; private set; }
+
     void Start()
     {
         if (!Driver)
             Driver = GetComponent<AIDriver>();
+
+        DeadTrigger.enabled = false;
     }
     
     public void JustDied()
@@ -24,24 +30,36 @@ public class DeadBody : BaseBehaviour
     public void OnPickup()
     {
         // Ensure calmness
+        foreach (var child in Driver.Pawn.GetComponentsInChildren<Collider>())
+        {
+            child.enabled = false;
+        }
+        
         Driver.Pawn.Body.freezeRotation = true;
         Driver.Pawn.Body.useGravity = false;
         Driver.Pawn.ResetBody();
-        Driver.Pawn.transform.rotation = Quaternion.identity;
+    }
+    
+    public void EnsureDeadCollider()
+    {
+        foreach (var child in Driver.Pawn.GetComponentsInChildren<Collider>())
+        {
+            child.enabled = false;
+        }
+
+        DeadCollider.enabled = true;
     }
 
     public void Throw(Vector3 power)
     {
         if (!Driver)
             Driver = GetComponent<AIDriver>();
-        
-        foreach (var child in Driver.Pawn.GetComponentsInChildren<Collider>())
-        {
-            child.enabled = true;
-        }
 
-        EnableRagdoll();
+        WasThrown = true;
         
+        EnsureDeadCollider();
+        EnableRagdoll();
+
         Driver.Pawn.Body.AddForce(power, ForceMode.Impulse);
     }
 
@@ -53,7 +71,7 @@ public class DeadBody : BaseBehaviour
         {
             yield return null;
         }
-        
+
         DisableRagdoll();
     }
 
@@ -67,6 +85,8 @@ public class DeadBody : BaseBehaviour
 
     public void DisableRagdoll()
     {
+        WasThrown = false;
+        
         Driver.Pawn.Body.freezeRotation = true;
         Driver.Pawn.Body.useGravity = false;
         
@@ -78,6 +98,5 @@ public class DeadBody : BaseBehaviour
         JustDied();
         
         Driver.Pawn.ResetBody();
-        Driver.Pawn.transform.rotation = Quaternion.identity;
     }
 }

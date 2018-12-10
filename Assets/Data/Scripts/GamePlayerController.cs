@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using Framework;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Data.Scripts
 {
@@ -45,6 +46,8 @@ namespace Data.Scripts
 
         private bool CanThrow = true;
 
+        private AnimCallback Anim;
+
         public enum State
         {
             Idle,
@@ -60,8 +63,12 @@ namespace Data.Scripts
 
             PointOfTaken = Pawn.GetComponent<PointOfTakenProvider>().Provide();
             TakenOffset = Pawn.GetComponent<PointOfTakenProvider>().Offset;
-            Pawn.GetComponent<AnimCallback>().OnDoThrow.AddListener(EndThrow);
-            Pawn.GetComponent<AnimCallback>().OnEndPullUp.AddListener(EndPullUp);
+            
+            Anim = Pawn.GetComponent<AnimCallback>();
+            
+            Anim.OnDoThrow.AddListener(DoThrow);
+            Anim.OnEndThrow.AddListener(AfterThrow);
+            Anim.OnEndPullUp.AddListener(EndPullUp);
         }
 
         protected override void OnProcessControll()
@@ -179,10 +186,18 @@ namespace Data.Scripts
 
             Instantiate(ReviveEffect, RevivedPawn.transform.position, Quaternion.Euler(0,0,90), RevivedPawn.transform); // ;__;
 
+            var dir = (RevivedPawn.transform.position - Pawn.transform.position).normalized;
+
+            Pawn.LockFaceDirection(dir);
             Pawn.Anim.SetTrigger("OnRevive");
-            
-            yield return new WaitForSeconds(ReviveDuration);
-            
+
+            yield return new WaitForSeconds(ReviveDuration * 0.5f);
+
+            Anim.OnRevive.Invoke();
+
+            yield return new WaitForSeconds(ReviveDuration * 0.5f);
+
+            Pawn.UnlockFaceDirection();
             Pawn.MaxSpeed = oldSpeed;
 
             var oldPos = RevivedPawn.transform.position;
@@ -197,20 +212,24 @@ namespace Data.Scripts
             CurrentState = State.Idle;
         }
 
-
         public void EndPullUp()
         {
+            Pawn.UnlockFaceDirection();
             Pawn.MaxSpeed = Pawn.Movement.MaxSpeed * 0.65f;
             CanThrow = true;
         }
 
-        public void EndThrow()
+        public void AfterThrow()
+        {
+            Pawn.MaxSpeed = Pawn.Movement.MaxSpeed;
+        }
+
+        public void DoThrow()
         {
             if (!TakenPawn)
                 return;
             
             TakenPawn.transform.SetParent(null, true);
-            var driver = TakenPawn.GetComponent<AIDriver>();
 
             var dirToPot = MainGame.Instance.Pot.transform.position - Pawn.transform.position;
             var distToPot = Vector3.Distance(MainGame.Instance.Pot.transform.position, Pawn.transform.position);
@@ -220,15 +239,12 @@ namespace Data.Scripts
             }
             else
             {
-                // back online, but he will fall
                 TakenPawn.GetComponent<DeadBody>()
                     .Throw(Vector3.Lerp(Pawn.transform.forward, Vector3.up, 0.5f) * ThrowForce);
             }
-            
+
             TakenPawn = null;
             CurrentState = State.Idle;
-
-            Pawn.MaxSpeed = Pawn.Movement.MaxSpeed;
         }
 
         void DoTake()
@@ -257,8 +273,11 @@ namespace Data.Scripts
             
             if (CurrentState != State.Idle)
                 return;
-            
-            foreach (var collider in Physics.OverlapSphere(Pawn.transform.position, ReviveRadius, QueryMask, QueryTriggerInteraction.Collide)
+
+            var allColliders = Physics.OverlapSphere(Pawn.transform.position, ReviveRadius, QueryMask,
+                QueryTriggerInteraction.Collide);
+
+            foreach (var collider in allColliders
                 .Where(p =>
                 {
                     var dir = p.transform.position - Pawn.transform.position;
@@ -291,6 +310,9 @@ namespace Data.Scripts
                 
                 CurrentState = State.Take;
 
+                var dir = (TakenPawn.transform.position - Pawn.transform.position).normalized;
+
+                Pawn.LockFaceDirection(dir);
                 Pawn.MaxSpeed = 0;
             }
         }
@@ -302,9 +324,17 @@ namespace Data.Scripts
             StartOfPositionBlend = Time.time;
 
             var startPos = TakenPawn.transform.position;
+            var startRot = TakenPawn.transform.rotation;
             while (Time.time - StartOfPositionBlend < PositionBlendTime)
             {
                 var target = PointOfTaken.position;
+
+                TakenPawn.transform.rotation = Quaternion.Slerp(
+                    startRot,
+                    Quaternion.identity,
+                    (Time.time - StartOfPositionBlend) / PositionBlendTime
+                );
+
                 TakenPawn.transform.position = Vector3.Lerp
                 (
                     startPos,
