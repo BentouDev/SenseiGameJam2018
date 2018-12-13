@@ -174,6 +174,8 @@ ModelImporter:
     100336: Victim
     100338: Victim_controller
     100340: Weapons
+    100342: animBot
+    100344: animBot_Anim_Recovery_Scene_ID
     400000: Body
     400002: Demon
     400004: Demon_0006:Body_CTL
@@ -345,6 +347,8 @@ ModelImporter:
     400336: Victim
     400338: Victim_controller
     400340: Weapons
+    400342: animBot
+    400344: animBot_Anim_Recovery_Scene_ID
     2100000: DemonessBody
     2100002: Hair
     2100004: lambert1
@@ -451,6 +455,8 @@ ModelImporter:
     11400174: Hair
     11400176: Head
     11400178: Victim
+    11400180: animBot
+    11400182: animBot_Anim_Recovery_Scene_ID
     13700000: Body
     13700002: Hair
     13700004: Head
