@@ -176,6 +176,9 @@ ModelImporter:
     100340: Weapons
     100342: animBot
     100344: animBot_Anim_Recovery_Scene_ID
+    100346: motionTrail1Handle
+    100348: motionTrail2Handle
+    100350: motionTrail3Handle
     400000: Body
     400002: Demon
     400004: Demon_0006:Body_CTL
@@ -349,6 +352,9 @@ ModelImporter:
     400340: Weapons
     400342: animBot
     400344: animBot_Anim_Recovery_Scene_ID
+    400346: motionTrail1Handle
+    400348: motionTrail2Handle
+    400350: motionTrail3Handle
     2100000: DemonessBody
     2100002: Hair
     2100004: lambert1
